@@ -2,7 +2,7 @@ import re
 from openai import OpenAI
 
 import os
-from model import configure_model
+from Tools.model import configure_model
 from openai import OpenAI
 
 client = OpenAI()
@@ -29,11 +29,12 @@ def summarize_text(clean_text):
         if sentence:
             try:
                 response = client.chat.completions.create(
-                model="gpt-4",
+                model="gpt-3.5-turbo",
                 messages=[
                     {"role": "system", "content": "You are a highly detail-oriented assistant tasked with correcting grammatical errors, fixing punctuation, and improving the overall clarity of text without changing the original meaning."},
                     {"role": "user", "content":  f"Please correct and improve this text: \"{sentence}\""}
                 ],
+                temperature=0.1,
                 max_tokens=60)
                 summaries.append(response.choices[0].message.content.strip())
             except Exception as e:
@@ -52,7 +53,7 @@ def process_text(file_path):
     return sentence_summaries or []
 
 if __name__ == '__main__':
-    file_path = "/Users/yonganyu/Desktop/GEOG_research/blog/cold _English_historical_ML_corpus.txt"
+    file_path = "/Users/yonganyu/Desktop/vulnerability-Prediction-GEOG-research-/blog/cold _English_historical_ML_corpus.txt"
     summaries = process_text(file_path)
     for summary in summaries:
         print(summary)

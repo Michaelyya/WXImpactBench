@@ -15,11 +15,14 @@ from langchain_community.document_loaders.csv_loader import CSVLoader
 from langchain_openai import OpenAIEmbeddings
 from Tools.model import configure_model
 from google.api_core import exceptions
+from Tools.clean_data import process_text
 
-api_key = os.environ.get("PINECONE_API_KEY")
-pc = Pinecone(
-        api_key=os.environ.get("PINECONE_API_KEY")
-    )
+
+
+# api_key = os.environ.get("PINECONE_API_KEY")
+# pc = Pinecone(
+#         api_key=os.environ.get("PINECONE_API_KEY")
+#     )
 
 model = configure_model()
 # client = OpenAI(
@@ -27,25 +30,22 @@ model = configure_model()
 # )
 
 
-index_name = "geography"
-if index_name not in pc.list_indexes().names():
-    pc.create_index(
-        name=index_name, 
-        dimension=512,  # Adjust the dimension to match your embeddings
-        metric='euclidean',  # Choose the metric that suits your use case
-        spec=ServerlessSpec(
-            cloud='aws',  # or 'gcp' depending on your preference or requirements
-            region='us-west-2'  # Choose the region closest to you or your users
-        )
-    )
+# index_name = "geography"
+# if index_name not in pc.list_indexes().names():
+#     pc.create_index(
+#         name=index_name, 
+#         dimension=512,  # Adjust the dimension to match your embeddings
+#         metric='euclidean',  # Choose the metric that suits your use case
+#         spec=ServerlessSpec(
+#             cloud='aws',  # or 'gcp' depending on your preference or requirements
+#             region='us-west-2'  # Choose the region closest to you or your users
+#         )
+#     )
 
-    
+
+
 def split_txtChunks(txt: str, chunk_size: int) -> list:
-    loader = TextLoader(txt)
-    document = loader.load()
-    TextSplitter = CharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=0)
-    texts = TextSplitter.split_documents(document)
-    return texts
+    return [txt[i:i+chunk_size] for i in range(0, len(txt), chunk_size)]
 
 
 def search(query, texts, text_embeddings):
@@ -78,9 +78,8 @@ def make_request(prompt):
     return model.generate_content(prompt)
 
 def analyze_topics(file:str, topics: list) -> list:
-    texts = split_txtChunks(file, 1000)
-    for text in texts:
-        print(str(text)+"\n")
+    new_file = process_text(file)
+    texts = split_txtChunks(new_file, 1000)
     topic_info = []
     for chunk in texts:
         prompt = generate_prompt(topics, chunk)
@@ -120,3 +119,4 @@ if __name__ =="__main__":
     #     agent_Type=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
     # )
     # csv_agent.run("how many rows in this csv file")
+

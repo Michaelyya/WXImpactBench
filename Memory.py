@@ -18,7 +18,7 @@ load_dotenv()
 
 
 api_key = os.environ.get("PINECONE_API_KEY")
-pc = Pinecone(api_key="3573060c-127a-4583-ba24-ad546944de10")
+pc = Pinecone(api_key=api_key)
 
 client = OpenAI(
   api_key=os.environ.get("OPENAI_API_KEY")

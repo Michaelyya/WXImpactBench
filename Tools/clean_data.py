@@ -2,7 +2,6 @@ import re
 from openai import OpenAI
 
 import os
-from Tools.model import configure_model
 from openai import OpenAI
 
 client = OpenAI()
@@ -21,36 +20,35 @@ def clean_text(raw_text):
     text = re.sub(r",+", ', ', text).strip()
     return text
 
-def summarize_text(clean_text):
-    sentences = re.split(r'(?<=[.!?]) +', clean_text)
-    summaries = []
+# def summarize_text(clean_text):
+#     sentences = re.split(r'(?<=[.!?]) +', clean_text)
+#     # summaries = []
 
-    for sentence in sentences:
-        if sentence:
-            try:
-                response = client.chat.completions.create(
-                model="gpt-3.5-turbo",
-                messages=[
-                    {"role": "system", "content": "You are a highly detail-oriented assistant tasked with correcting grammatical errors, fixing punctuation, and improving the overall clarity of text without changing the original meaning."},
-                    {"role": "user", "content":  f"Please correct and improve this text: \"{sentence}\""}
-                ],
-                temperature=0.1,
-                max_tokens=60)
-                summaries.append(response.choices[0].message.content.strip())
-            except Exception as e:
-                print(f"Error processing sentence [{sentence}]: {str(e)}")
-                continue
-
-    return summaries
+#     # for sentence in sentences:
+#     #     if sentence:
+#     #         try:
+#     #             response = client.chat.completions.create(
+#     #             model="gpt-4",
+#     #             messages=[
+#     #                 {"role": "system", "content": "You are an assistant tasked with correcting grammatical errors without summarizing or altering the content."},
+#     #                 {"role": "user", "content":  f"Please corect the grammar this texts: \"{sentence}\""}
+#     #             ],
+#     #             temperature=0.1,
+#     #             max_tokens=60)
+#     #             summaries.append(response.choices[0].message.content.strip())
+#     #         except Exception as e:
+#     #             print(f"Error processing sentence [{sentence}]: {str(e)}")
+#     #             continue
+#     # print(summaries)
+#     return sentences
 
 def process_text(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
         raw_text = file.read()
 
     cleaned_text = clean_text(raw_text)
-    sentence_summaries = summarize_text(cleaned_text)
 
-    return sentence_summaries or []
+    return cleaned_text
 
 if __name__ == '__main__':
     file_path = "/Users/yonganyu/Desktop/vulnerability-Prediction-GEOG-research-/blog/cold _English_historical_ML_corpus.txt"

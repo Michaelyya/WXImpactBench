@@ -16,9 +16,9 @@ from GPT_model import analyze_topics
 from dotenv import load_dotenv
 load_dotenv()
 
-
+pinecone_api = os.environ.get("PINECONE_API_KEY")
 api_key = os.environ.get("PINECONE_API_KEY")
-pc = Pinecone(api_key=api_key)
+pc = Pinecone(api_key="pinecone_api")
 
 client = OpenAI(
   api_key=os.environ.get("OPENAI_API_KEY")
@@ -72,7 +72,43 @@ def upsert_to_pinecone(data):
                 index.upsert(vectors=[(response_id, response_embedding)])
                 print(f"Inserted responses into Pinecone with ID: {response_id}")
 
+def search_similar_texts(query_text, top_k=5):
+    query_embedding = generate_embeddings(query_text)
+    if query_embedding:
+        results = index.query(queries=[query_embedding], top_k=top_k)
+        return results
+    else:
+        return {"matches": []}
 
+def generate_response(contexts):
+    """ Generate a response based on retrieved contexts using a language model. """
+    context = " ".join(contexts)
+    prompt = f"Given the following information: {context}, summarize the key points and answer the user's query."
+    response = client.Completion.create(engine="davinci", prompt=prompt, max_tokens=150)
+    return response.choices[0].text
+
+def rag_system(query):
+    similar_docs = search_similar_texts(query)
+    if similar_docs['matches']:
+        contexts = [doc['metadata'].get('text', '') for doc in similar_docs['matches']]
+        response = generate_response(contexts)
+        return response
+    else:
+        return "No relevant information found based on your query."
+
+# Test Case
+def test_rag_system():
+    query = "What are the vulnerabilities and responses related to heatwaves?"
+    response = rag_system(query)
+    print("Response:", response)
+    
+    # Asserting the expected response
+    expected_keywords = ["vulnerability", "heatwaves", "deaths", "government actions", "health sector adaptation", "inequalities", "long-term strategies"]
+    for keyword in expected_keywords:
+        assert keyword in response, f"Expected keyword '{keyword}' not found in the response."
+
+if __name__ == "__main__":
+    test_rag_system()
 
 if __name__ =="__main__":
     file = "blog/cold _English_historical_ML_corpus.txt"

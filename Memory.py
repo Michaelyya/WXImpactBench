@@ -9,16 +9,15 @@ from pinecone import Pinecone, ServerlessSpec
 from langchain_community.document_loaders.csv_loader import CSVLoader
 from langchain_openai import OpenAIEmbeddings
 from openai import OpenAI
-
 client = OpenAI()
 import pinecone
 from GPT_model import analyze_topics
 from dotenv import load_dotenv
 load_dotenv()
 
-pinecone_api = os.environ.get("PINECONE_API_KEY")
+openai_api_key = os.environ.get("OPENAI_API_KEY")
 api_key = os.environ.get("PINECONE_API_KEY")
-pc = Pinecone(api_key="pinecone_api")
+pc = Pinecone(api_key="3573060c-127a-4583-ba24-ad546944de10")
 
 client = OpenAI(
   api_key=os.environ.get("OPENAI_API_KEY")
@@ -36,8 +35,6 @@ if index_name not in pc.list_indexes().names():
         )
     )
 
-embeddings = OpenAIEmbeddings(openai_api_key=os.environ.get("OPENAI_API_KEY"))
-
 index = pc.Index(index_name)
 
 def generate_embeddings(text):
@@ -47,7 +44,6 @@ def generate_embeddings(text):
     try:
         # Assuming `text` is a non-empty string
         response = client.embeddings.create( model="text-embedding-ada-002",input=text)
-        # Extracting the first embedding vector
         return response.data[0].embedding
     except Exception as e:
         print(f"Error generating embeddings: {e}")
@@ -80,26 +76,41 @@ def search_similar_texts(query_text, top_k=5):
     else:
         return {"matches": []}
 
-def generate_response(contexts):
-    """ Generate a response based on retrieved contexts using a language model. """
-    context = " ".join(contexts)
-    prompt = f"Given the following information: {context}, summarize the key points and answer the user's query."
-    response = client.Completion.create(engine="davinci", prompt=prompt, max_tokens=150)
-    return response.choices[0].text
+embeddings = OpenAIEmbeddings(openai_api_key=os.environ.get("OPENAI_API_KEY"))
+docsearch = PineconeStore.from_existing_index(embedding=embeddings.embed_query, index_name=index_name)
+qa = RetrievalQA.from_chain_type(llm=OpenAI(), chain_type="stuff", retriever=docsearch.as_retriever())
 
-def rag_system(query):
-    similar_docs = search_similar_texts(query)
-    if similar_docs['matches']:
-        contexts = [doc['metadata'].get('text', '') for doc in similar_docs['matches']]
-        response = generate_response(contexts)
-        return response
-    else:
-        return "No relevant information found based on your query."
 
-# Test Case
+    
+# def search_similar_texts(query_text, top_k=5):
+#     query_embedding = generate_embeddings(query_text)
+#     if query_embedding:
+#         results = index.query(queries=[query_embedding], top_k=top_k)
+#         return results
+#     else:
+#         return {"matches": []}
+
+# def generate_response(contexts):
+#     """ Generate a response based on retrieved contexts using a language model. """
+#     context = " ".join(contexts)
+#     prompt = f"Given the following information: {context}, summarize the key points and answer the user's query."
+#     response = client.Completion.create(engine="davinci", prompt=prompt, max_tokens=150)
+#     return response.choices[0].text
+
+# def rag_system(query):
+#     similar_docs = search_similar_texts(query)
+#     if similar_docs['matches']:
+#         contexts = [doc['metadata'].get('text', '') for doc in similar_docs['matches']]
+#         response = generate_response(contexts)
+#         return response
+#     else:
+#         return "No relevant information found based on your query."
+
+
+
 def test_rag_system():
     query = "What are the vulnerabilities and responses related to heatwaves?"
-    response = rag_system(query)
+    response = qa.run(query)
     print("Response:", response)
     
     # Asserting the expected response
@@ -107,19 +118,12 @@ def test_rag_system():
     for keyword in expected_keywords:
         assert keyword in response, f"Expected keyword '{keyword}' not found in the response."
 
+
+
 if __name__ == "__main__":
+
     test_rag_system()
-
-if __name__ =="__main__":
-    file = "blog/cold _English_historical_ML_corpus.txt"
-    topics = [
-        "weather",
-    ]
-    data = analyze_topics(file,topics)
-    print(analyze_topics(file,topics))
-    upsert_to_pinecone(data)
-
-
+    
 
 # def search(query, texts, text_embeddings):
 #     query_embedding = OpenAIEmbeddings.embed_query(query)
@@ -128,12 +132,6 @@ if __name__ =="__main__":
 #     return texts[max_index]
 
 
-
-
-
-    # text_embeddings = [embeddings.embed_query(text) for text in texts]
-    # query = "Please give me some summarization about the extreme weather information"
-    # result = search (query, texts, text_embeddings)
 
 
     # docsearch = PineconeStore.from_documents(text, embeddings, index_name=index_name)

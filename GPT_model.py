@@ -5,6 +5,7 @@ from Tools.clean_data import process_text
 from openai import OpenAI
 from dotenv import load_dotenv
 load_dotenv()
+from transformers import pipeline
 import time
 
 # model = configure_model()
@@ -26,13 +27,25 @@ def generate_prompt(topics, text_chunk):
     Focus on two key areas:
     1. Societal vulnerabilities: Detail how the community or infrastructure was vulnerable due to weather events. Include specific examples such as properties damaged, people affected, and the immediate consequences.
     2. Resilience and responses: Describe the actions taken by individuals, communities, or governments to respond to these events. Highlight strategies for managing or mitigating the impact, including emergency responses and long-term planning.
-    
     It's important that your response only includes information explicitly related to weather events. If no such information is found, please indicate so.
+
+    Additionally, indicate whether the text discusses:
+    - Infrastructural impact
+    - Agricultural impact
+    - Ecological impact
+    - Economic impact
+    Each should be marked as "True" or "False" based on the presence of relevant information.
     """
     
     example_output = {
         "Vulnerabilities": "e.g., The flood resulted in over 200 homes being destroyed, leaving many without shelter.",
-        "Resilience and Responses": "e.g., The local government deployed emergency response teams and set up temporary shelters for the displaced residents."
+        "Resilience and Responses": "e.g., The local government deployed emergency response teams and set up temporary shelters for the displaced residents.",
+        "Infrastructural impact": "False",
+        "Agricultural impact": "True",
+        "Ecological impact": "True",
+        "Economic impact": "True",
+        "societal impact": "True",
+        "human health impact": "True"
     }
     formatted_example = json.dumps(example_output, indent=4)
 
@@ -84,16 +97,30 @@ def filter_weather_related_chunks(texts, keywords):
             filtered_texts.append(text)
     return filtered_texts
 
+def setup_summarizer(model_name="facebook/bart-large-cnn"):
+    # Load the summarization pipeline with your chosen model
+    summarizer = pipeline("summarization", model=model_name) #If you do not pick a model, it will pick up for you automatically according to the description
+    return summarizer
+
 
 def analyze_topics(file: str, topics: list) -> list:
     new_file = process_text(file)
-    texts = split_txtChunks(new_file, 2000)
+    texts = split_txtChunks(new_file, 3000)
     # filtered_texts = filter_weather_related_chunks(texts, keywords)
     # print(filtered_texts)
     topic_info = []
+    summarizer = setup_summarizer()
 
     for chunk in texts:
-        prompt = generate_prompt(topics, chunk)
+        try:
+            summary = summarizer(chunk, max_length=250, min_length=150, do_sample=False)
+            processed_summary = summary[0]['summary_text']
+        except Exception as e:
+            print(f"Error summarizing text: {e}")
+            processed_summary = ""
+        print("------------------------------------------------------------------------")
+        print(processed_summary)
+        prompt = generate_prompt(topics, processed_summary)
         try:
             response = make_request(prompt)
             # Adjust the following line to match how the OpenAI API returns the response
@@ -110,7 +137,7 @@ def analyze_topics(file: str, topics: list) -> list:
     return {"info": topic_info}
  
 if __name__ =="__main__":
-    file = "blog/cold _English_historical_ML_corpus.txt"
+    file = "blog/snow_English_historical_ML_corpus.txt"
     topics = [
         "weather",
     ]

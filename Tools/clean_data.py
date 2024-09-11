@@ -51,6 +51,13 @@ def clean_text(raw_text):
     text = re.sub(r"\'d", ' would', text)
     return text
 
+def obtain_text(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        raw_text = file.read()
+
+    text = clean_text(raw_text)
+    return text
+
 def process_text(file_path):
     """
     Read the text from the given file path, clean it, and return the cleaned text and suggested words.

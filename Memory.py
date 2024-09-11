@@ -11,7 +11,7 @@ from langchain_openai import OpenAIEmbeddings
 from openai import OpenAI
 client = OpenAI()
 import pinecone
-from GPT_model import analyze_topics
+from vunerability import analyze_topics
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -80,31 +80,6 @@ embeddings = OpenAIEmbeddings(openai_api_key=os.environ.get("OPENAI_API_KEY"))
 docsearch = PineconeStore.from_existing_index(embedding=embeddings.embed_query, index_name=index_name)
 qa = RetrievalQA.from_chain_type(llm=OpenAI(), chain_type="stuff", retriever=docsearch.as_retriever())
 
-
-    
-# def search_similar_texts(query_text, top_k=5):
-#     query_embedding = generate_embeddings(query_text)
-#     if query_embedding:
-#         results = index.query(queries=[query_embedding], top_k=top_k)
-#         return results
-#     else:
-#         return {"matches": []}
-
-# def generate_response(contexts):
-#     """ Generate a response based on retrieved contexts using a language model. """
-#     context = " ".join(contexts)
-#     prompt = f"Given the following information: {context}, summarize the key points and answer the user's query."
-#     response = client.Completion.create(engine="davinci", prompt=prompt, max_tokens=150)
-#     return response.choices[0].text
-
-# def rag_system(query):
-#     similar_docs = search_similar_texts(query)
-#     if similar_docs['matches']:
-#         contexts = [doc['metadata'].get('text', '') for doc in similar_docs['matches']]
-#         response = generate_response(contexts)
-#         return response
-#     else:
-#         return "No relevant information found based on your query."
 
 
 

@@ -36,7 +36,6 @@ def correct_ocr(text):
     messages=[
         {"role": "system", "content": "You are an expert in correcting OCR errors. Your task is to fix any OCR mistakes in the given text while preserving the original meaning and formatting as much as possible."},
         {"role": "user", "content": f"Please correct the following OCR text:\n\n{text}"},
-        {"role": "assistant", "content": "Please correct the following OCR text:\n\n{text}"}
     ],
     max_tokens=4000,
     n=1,

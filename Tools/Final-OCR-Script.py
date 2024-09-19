@@ -14,7 +14,7 @@ client = OpenAI(
     # API key from environment variable
     api_key=os.getenv("OPENAI_API_KEY"))
 
-encoding = tiktoken.encoding_for_model(CHATGPT_MODEL)
+
 
 
 def call_chatgpt_api(text_chunk):
@@ -34,9 +34,7 @@ def call_chatgpt_api(text_chunk):
             model=CHATGPT_MODEL,
             messages=[
                 {"role": "system",
-                "content": (f"{instruction}",
-                "Your output should strictly follow these guidelines."
-        )},
+                "content": (f"{instruction}")},
                 {"role": "user", "content": f"Correct the following newspaper OCR text:\n\n{text_chunk}"}
             ],
             n=1,
@@ -124,6 +122,6 @@ def process_file(input_file, output_file):
 
 
 if __name__ == "__main__":
-    input_file = "torrential_English_historical_ML_corpus.csv"  # Your input file in CSV format
+    input_file = "blog/freezing_English_modern_ML_corpus.csv"  # Your input file in CSV format
     output_file = "output.csv"  # Your output file
     process_file(input_file, output_file)

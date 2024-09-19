@@ -12,19 +12,32 @@ TOKEN_LIMIT = 60000  # 128k maximum, not sure if it is the sum of input and outp
 # Initialize OpenAI API client
 client = OpenAI(
     # API key from environment variable
-    api_key=os.getenv("API_KEY"))
+    api_key=os.getenv("OPENAI_API_KEY"))
 
 encoding = tiktoken.encoding_for_model(CHATGPT_MODEL)
 
 
 def call_chatgpt_api(text_chunk):
+    instruction = (
+    "You are an expert OCR correction assistant specializing in newspaper text. Your task is to:"
+    "1. Correct OCR errors while preserving the original text's meaning, structure, and formatting."
+    "2. Maintain proper nouns, dates, numbers, and specialized terms accurately."
+    "3. Preserve paragraph breaks and any visible text formatting (e.g., headlines, subheadings)."
+    "4. Remove unnecessary characters like extra commas, quotation marks, or periods."
+    "5. Ensure hyphenated words split across lines are properly rejoined."
+    "6. Preserve any visible article structure (bylines, datelines, section headers)."
+    "7. Output the corrected text as a single string, with line breaks (\\n) for paragraphs and formatting."
+    "NOTE: Do not provide any explanations, summaries, or additional comments. Output only the corrected text."
+    )
     try:
         response = client.chat.completions.create(
             model=CHATGPT_MODEL,
             messages=[
                 {"role": "system",
-                 "content": "You are an assistant that fixes OCR text errors. Do NOT say anything other than the corrected output. Note that there might be many unnecessary ', \", or . Make sure your output is in one line"},
-                {"role": "user", "content": f"{text_chunk}"}
+                "content": (f"{instruction}",
+                "Your output should strictly follow these guidelines."
+        )},
+                {"role": "user", "content": f"Correct the following newspaper OCR text:\n\n{text_chunk}"}
             ],
             n=1,
             stop=None,

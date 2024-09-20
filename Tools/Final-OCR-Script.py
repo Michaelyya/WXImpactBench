@@ -26,15 +26,15 @@ def call_chatgpt_api(text_chunk):
     "4. Remove unnecessary characters like extra commas, quotation marks, or periods."
     "5. Ensure hyphenated words split across lines are properly rejoined."
     "6. Preserve any visible article structure (bylines, datelines, section headers)."
-    "7. Output the corrected text as a single string, with line breaks (\\n) for paragraphs and formatting."
-    "NOTE: Do not provide any explanations, summaries, or additional comments. Output only the corrected text."
+    "7. Remove all extra spaces and remove all newlines characters."
+    "NOTE: Do not provide any explanations, summaries, or additional comments. Output only the corrected text. Do not add any new line character, I need it to be just in one line"
     )
     try:
         response = client.chat.completions.create(
             model=CHATGPT_MODEL,
             messages=[
                 {"role": "system",
-                "content": (f"{instruction}")},
+                "content": instruction},
                 {"role": "user", "content": f"Correct the following newspaper OCR text:\n\n{text_chunk}"}
             ],
             n=1,
@@ -83,13 +83,12 @@ def split_text_to_chunks(text):
         chunks.append(' '.join(current_chunk))
     return chunks
 
-
 def process_file(input_file, output_file):
     with open(input_file, 'r', encoding='utf-8') as file:
         reader = csv.reader(file)
 
-        with open(output_file, 'w', encoding='utf-8') as outfile:
-            writer = csv.writer(outfile)
+        with open(output_file, 'w', encoding='utf-8', newline='') as outfile:
+            writer = csv.writer(outfile, quoting=csv.QUOTE_ALL)
             writer.writerow(["Date", "Text"])  # Output header
 
             for row in reader:
@@ -99,27 +98,24 @@ def process_file(input_file, output_file):
                 if text.strip() == "[]" or not text.strip() or date == "Date":
                     continue
 
-                # Split text into chunks based on token limit
-                text.strip("\"").strip("[").strip("]").strip("\'")
+                # Remove surrounding brackets and quotes
+                text = text.strip("[]\"' ")
                 text_chunks = split_text_to_chunks(text)
 
                 try:
                     processed_chunks = []
                     for chunk in text_chunks:
                         fixed_text = call_chatgpt_api(chunk)
-                        fixed_text = "[" + fixed_text + "]"
-                        fixed_text.strip("\"")
                         processed_chunks.append(fixed_text)
 
-                    # Only write to the file if all chunks are successfully processed
-                    writer.writerow([date, ' '.join(processed_chunks)])
+                    # Join processed chunks and write to the file
+                    final_text = ' '.join(processed_chunks)
+                    writer.writerow([date, final_text])
                     print(f"Processed text for date: {date}")
 
                 except RuntimeError as e:
-                    # Print error and skip the row if any API call fails
                     print(f"ERROR OCCURRED Date {date}, text starts with: {text[:50]}")
                     continue
-
 
 if __name__ == "__main__":
     input_file = "blog/freezing_English_modern_ML_corpus.csv"  # Your input file in CSV format

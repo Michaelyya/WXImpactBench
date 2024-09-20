@@ -1,9 +1,9 @@
 import csv
-import re
 import os
-import tiktoken
 from openai import OpenAI
 import math
+import argparse
+import traceback 
 
 # Constants for ChatGPT API
 CHATGPT_MODEL = 'gpt-4o-mini'  # Assuming this is the model we will use
@@ -13,9 +13,6 @@ TOKEN_LIMIT = 60000  # 128k maximum, not sure if it is the sum of input and outp
 client = OpenAI(
     # API key from environment variable
     api_key=os.getenv("OPENAI_API_KEY"))
-
-
-
 
 def call_chatgpt_api(text_chunk):
     instruction = (
@@ -115,9 +112,27 @@ def process_file(input_file, output_file):
 
                 except RuntimeError as e:
                     print(f"ERROR OCCURRED Date {date}, text starts with: {text[:50]}")
+                    print(f"ERR MESSAGE: {traceback.format_exc()}")
                     continue
 
 if __name__ == "__main__":
-    input_file = "blog/freezing_English_modern_ML_corpus.csv"  # Your input file in CSV format
-    output_file = "output.csv"  # Your output file
+    """
+    Call by specifying the location of csv files.
+
+    Usage example: 
+    python Final-OCR-Script.py --src-file "test.csv"--dst-file "out.csv"
+    >>> Configuration to script: {'src_file': 'test.csv', 'dst_file': 'out.csv'}
+
+    """
+    parser = argparse.ArgumentParser(description="OCR_post-correction_args",
+                                    formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser.add_argument("--src-file", help="Source file location", default="./torrential_English_historical_ML_corpus.csv")
+    parser.add_argument("--dst-file", help="Destination file location", default="./output.csv")
+    args = parser.parse_args()
+    config = vars(args)
+    print(f"Configuration to script: {config}")
+
+    input_file = args.src_file  # Your input file in CSV format
+    output_file = args.dst_file  # Your output file
+
     process_file(input_file, output_file)

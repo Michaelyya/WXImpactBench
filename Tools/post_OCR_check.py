@@ -5,15 +5,15 @@ import os
 def post_ocr_report(original_ocr_file, corrected_ocr_file):
     df_origin = pd.read_csv(original_ocr_file).sort_values(by="Date")
     df_corrected = pd.read_csv(corrected_ocr_file).sort_values(by="Date")
-
-    if df_corrected.duplicated(subset='Date').sum()>0:
-        df_corrected.to_csv(os.path.splitext(os.path.basename(str(corrected_ocr_file)))[0]+"_duplicatedRemoved.csv", index=False)
-
-    topic = re.search(r"^[^_]+", os.path.basename(str(original_ocr_file))).group().strip()
     print(f"Number of duplicated rows in origin file: {df_origin.duplicated(subset='Date').sum()}")
-    print(f"Number of duplicated rows in corrected file: {df_corrected.duplicated(subset='Date').sum()}")
-    print(f"Duplicated rows in corrected file: \n{df_corrected[df_corrected.duplicated(['Date'], keep=False)]}\n-------------------------")
-
+    if df_corrected.duplicated(subset='Date').sum()>0:
+        print(f"Number of duplicated rows in corrected file: {df_corrected.duplicated(subset='Date').sum()}")
+        print(f"Duplicated rows in corrected file: \n{df_corrected[df_corrected.duplicated(['Date'], keep=False)]}\n-------------------------")
+        df_corrected.to_csv(os.path.splitext(os.path.basename(str(corrected_ocr_file)))[0]+"_duplicatedRemoved.csv", index=False)
+    else:
+        print("No duplicated rows in corrected files!")
+    topic = re.search(r"^[^_]+", os.path.basename(str(original_ocr_file))).group().strip()
+    
     df_origin = df_origin.drop_duplicates(subset="Date")
     df_corrected = df_corrected.drop_duplicates(subset="Date")
     df_merged = pd.merge(df_origin, df_corrected, on="Date", how="left", suffixes=("_origin", "_corrected"))

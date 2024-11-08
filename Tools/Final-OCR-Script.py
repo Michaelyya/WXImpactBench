@@ -126,8 +126,8 @@ if __name__ == "__main__":
     """
     parser = argparse.ArgumentParser(description="OCR_post-correction_args",
                                     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument("--src-file", help="Source file location", default="./torrential_English_historical_ML_corpus.csv")
-    parser.add_argument("--dst-file", help="Destination file location", default="./output.csv")
+    parser.add_argument("--src-file", help="Source file location", default="/Users/yonganyu/Desktop/vulnerability-Prediction-GEOG-research-/blog/corrected/cold_English_modern_ML_corpus.csv")
+    parser.add_argument("--dst-file", help="Destination file location", default="/Users/yonganyu/Desktop/vulnerability-Prediction-GEOG-research-/blog/corrected/E_deluge_English_modern_ML_corpus.csv")
     args = parser.parse_args()
     config = vars(args)
     print(f"Configuration to script: {config}")

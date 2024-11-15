@@ -1,0 +1,1886 @@
+[
+    {
+        "Date": "18800116",
+        "Type": "historical",
+        "Weather": "storm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18800120",
+        "Type": "historical",
+        "Weather": "storm",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18800121",
+        "Type": "historical",
+        "Weather": "storm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18800219",
+        "Type": "historical",
+        "Weather": "storm",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18800403",
+        "Type": "historical",
+        "Weather": "storm",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18800408",
+        "Type": "historical",
+        "Weather": "storm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18800415",
+        "Type": "historical",
+        "Weather": "storm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18830312",
+        "Type": "historical",
+        "Weather": "storm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18940213",
+        "Type": "historical",
+        "Weather": "storm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18950819",
+        "Type": "historical",
+        "Weather": "storm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18930710",
+        "Type": "historical",
+        "Weather": "storm",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18920615",
+        "Type": "historical",
+        "Weather": "storm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18920223",
+        "Type": "historical",
+        "Weather": "storm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18910908",
+        "Type": "historical",
+        "Weather": "storm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18961014",
+        "Type": "historical",
+        "Weather": "storm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18930830",
+        "Type": "historical",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18860106",
+        "Type": "historical",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18950819",
+        "Type": "historical",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18890805",
+        "Type": "historical",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18900911",
+        "Type": "historical",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18830205",
+        "Type": "historical",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18880903",
+        "Type": "historical",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18840912",
+        "Type": "historical",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18841230",
+        "Type": "historical",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18900206",
+        "Type": "historical",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18951011",
+        "Type": "historical",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "18830914",
+        "Type": "historical",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "18820707",
+        "Type": "historical",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18980623",
+        "Type": "historical",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "18950122",
+        "Type": "historical",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18940213",
+        "Type": "historical",
+        "Weather": "snow",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18980207",
+        "Type": "historical",
+        "Weather": "snow",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18950515",
+        "Type": "historical",
+        "Weather": "snow",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18981128",
+        "Type": "historical",
+        "Weather": "snow",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18950124",
+        "Type": "historical",
+        "Weather": "snow",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18870401",
+        "Type": "historical",
+        "Weather": "snow",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18981124",
+        "Type": "historical",
+        "Weather": "snow",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18820222",
+        "Type": "historical",
+        "Weather": "snow",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18811010",
+        "Type": "historical",
+        "Weather": "snow",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18860123",
+        "Type": "historical",
+        "Weather": "snow",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18870115",
+        "Type": "historical",
+        "Weather": "snow",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18830321",
+        "Type": "historical",
+        "Weather": "snow",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18870329",
+        "Type": "historical",
+        "Weather": "snow",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18870301",
+        "Type": "historical",
+        "Weather": "snow",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18890408",
+        "Type": "historical",
+        "Weather": "snow",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18891227",
+        "Type": "historical",
+        "Weather": "snow",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18860205",
+        "Type": "historical",
+        "Weather": "snow",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18950515",
+        "Type": "historical",
+        "Weather": "ice",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18850404",
+        "Type": "historical",
+        "Weather": "ice",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18980321",
+        "Type": "historical",
+        "Weather": "ice",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18841107",
+        "Type": "historical",
+        "Weather": "ice",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18960101",
+        "Type": "historical",
+        "Weather": "ice",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18860424",
+        "Type": "historical",
+        "Weather": "ice",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18870822",
+        "Type": "historical",
+        "Weather": "ice",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18860610",
+        "Type": "historical",
+        "Weather": "ice",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "18860419",
+        "Type": "historical",
+        "Weather": "ice or flood?",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18840107",
+        "Type": "historical",
+        "Weather": "ice",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18860407",
+        "Type": "historical",
+        "Weather": "ice or flood?",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18850217",
+        "Type": "historical",
+        "Weather": "ice",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "18960427",
+        "Type": "historical",
+        "Weather": "ice",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18870425",
+        "Type": "historical",
+        "Weather": "ice or flood?",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18940330",
+        "Type": "historical",
+        "Weather": "ice",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18990114",
+        "Type": "historical",
+        "Weather": "torrential",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18900718",
+        "Type": "historical",
+        "Weather": "torrential",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18981019",
+        "Type": "historical",
+        "Weather": "torrential",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18990925",
+        "Type": "historical",
+        "Weather": "torrential",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "18800623",
+        "Type": "historical",
+        "Weather": "torrential",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18840527",
+        "Type": "historical",
+        "Weather": "torrential",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: false  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "18921018",
+        "Type": "historical",
+        "Weather": "torrential",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "18941218",
+        "Type": "historical",
+        "Weather": "torrential",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18960728",
+        "Type": "historical",
+        "Weather": "torrential",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18961023",
+        "Type": "historical",
+        "Weather": "torrential",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "18970514",
+        "Type": "historical",
+        "Weather": "torrential",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18971227",
+        "Type": "historical",
+        "Weather": "torrential",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18980629",
+        "Type": "historical",
+        "Weather": "torrential",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18980802",
+        "Type": "historical",
+        "Weather": "torrential",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: false  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18990919",
+        "Type": "historical",
+        "Weather": "torrential",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "18991018",
+        "Type": "historical",
+        "Weather": "torrential",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18841107",
+        "Type": "historical",
+        "Weather": "snowstorm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18901203",
+        "Type": "historical",
+        "Weather": "snowstorm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18910310",
+        "Type": "historical",
+        "Weather": "snowstorm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18911214",
+        "Type": "historical",
+        "Weather": "snowstorm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18990109",
+        "Type": "historical",
+        "Weather": "snowstorm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18820222",
+        "Type": "historical",
+        "Weather": "snowstorm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18981124",
+        "Type": "historical",
+        "Weather": "snowstorm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18871229",
+        "Type": "historical",
+        "Weather": "snowstorm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "18840128",
+        "Type": "historical",
+        "Weather": "snowstorm or hurricane?",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18871229",
+        "Type": "historical",
+        "Weather": "snowstorm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "18840303",
+        "Type": "historical",
+        "Weather": "snowstorm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18940213",
+        "Type": "historical",
+        "Weather": "snowstorm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18910127",
+        "Type": "historical",
+        "Weather": "snowstorm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18940410",
+        "Type": "historical",
+        "Weather": "snowstorm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18940216",
+        "Type": "historical",
+        "Weather": "snowstorm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18940217",
+        "Type": "historical",
+        "Weather": "snowstorm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18981128",
+        "Type": "historical",
+        "Weather": "flood",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18860423",
+        "Type": "historical",
+        "Weather": "flood",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18860125",
+        "Type": "historical",
+        "Weather": "flood",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18970625",
+        "Type": "historical",
+        "Weather": "flood",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "18930314",
+        "Type": "historical",
+        "Weather": "flood",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18860426",
+        "Type": "historical",
+        "Weather": "flood",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18850427",
+        "Type": "historical",
+        "Weather": "flood",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18830607",
+        "Type": "historical",
+        "Weather": "flood",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18971130",
+        "Type": "historical",
+        "Weather": "flood",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18940612",
+        "Type": "historical",
+        "Weather": "flood",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "18880927",
+        "Type": "historical",
+        "Weather": "flood",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18990510",
+        "Type": "historical",
+        "Weather": "flood",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "18950417",
+        "Type": "historical",
+        "Weather": "flood",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18870423",
+        "Type": "historical",
+        "Weather": "flood",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "18860116",
+        "Type": "historical",
+        "Weather": "flood",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "19980109",
+        "Type": "modern",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "20001106",
+        "Type": "modern",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19980124",
+        "Type": "modern",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "20040906",
+        "Type": "modern",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "20080424",
+        "Type": "modern",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "19980114",
+        "Type": "modern",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19960724",
+        "Type": "modern",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19930731",
+        "Type": "modern",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "20000715",
+        "Type": "modern",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "20070626",
+        "Type": "modern",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "20061203",
+        "Type": "modern",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "19990108",
+        "Type": "modern",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19980912",
+        "Type": "modern",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "20080105",
+        "Type": "modern",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19951006",
+        "Type": "modern",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "20020821",
+        "Type": "modern",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "19901112",
+        "Type": "modern",
+        "Weather": "rain",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19901222",
+        "Type": "modern",
+        "Weather": "Drought",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "19931113",
+        "Type": "modern",
+        "Weather": "Drought",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19900422",
+        "Type": "modern",
+        "Weather": "Drought",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "19910317",
+        "Type": "modern",
+        "Weather": "Drought",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19950630",
+        "Type": "modern",
+        "Weather": "Drought",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "19990522",
+        "Type": "modern",
+        "Weather": "Drought",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: false  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "19970419",
+        "Type": "modern",
+        "Weather": "Drought",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19980502",
+        "Type": "modern",
+        "Weather": "Drought",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19920330",
+        "Type": "modern",
+        "Weather": "Drought",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19980404",
+        "Type": "modern",
+        "Weather": "Drought",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19921010",
+        "Type": "modern",
+        "Weather": "Drought",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: false  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "19940219",
+        "Type": "modern",
+        "Weather": "Drought",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "19900624",
+        "Type": "modern",
+        "Weather": "Floods",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19900422",
+        "Type": "modern",
+        "Weather": "Floods",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19900616",
+        "Type": "modern",
+        "Weather": "Floods",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19901215",
+        "Type": "modern",
+        "Weather": "Floods",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19900421",
+        "Type": "modern",
+        "Weather": "Floods",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19900513",
+        "Type": "modern",
+        "Weather": "Floods",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19930711",
+        "Type": "modern",
+        "Weather": "Heatwaves",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "20060802",
+        "Type": "modern",
+        "Weather": "Heatwaves",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "20070626",
+        "Type": "modern",
+        "Weather": "Heatwaves",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "20030628",
+        "Type": "modern",
+        "Weather": "Heatwaves",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "19950618",
+        "Type": "modern",
+        "Weather": "Heatwaves",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: false  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "20020819",
+        "Type": "modern",
+        "Weather": "Heatwaves",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19930708",
+        "Type": "modern",
+        "Weather": "Heatwaves",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19950614",
+        "Type": "modern",
+        "Weather": "Heatwaves",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19901205",
+        "Type": "modern",
+        "Weather": "Snowstorm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "20090108",
+        "Type": "modern",
+        "Weather": "Snowstorm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "20000413",
+        "Type": "modern",
+        "Weather": "Snowstorm",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: false  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "19910302",
+        "Type": "modern",
+        "Weather": "Snowstorm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19930318",
+        "Type": "modern",
+        "Weather": "Snowstorm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "19970625",
+        "Type": "modern",
+        "Weather": "Snowstorm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "20080109",
+        "Type": "modern",
+        "Weather": "Snowstorm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "19940318",
+        "Type": "modern",
+        "Weather": "Snowstorm",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19990117",
+        "Type": "modern",
+        "Weather": "Snowstorm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "19951231",
+        "Type": "modern",
+        "Weather": "Snowstorm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19980109",
+        "Type": "modern",
+        "Weather": "Snowstorm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "19931226",
+        "Type": "modern",
+        "Weather": "Snowstorm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "20071222",
+        "Type": "modern",
+        "Weather": "Snowstorm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "19990710",
+        "Type": "modern",
+        "Weather": "Snowstorm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18801116",
+        "Type": "historical",
+        "Weather": "blizzard",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18850216",
+        "Type": "historical",
+        "Weather": "blizzard",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18861119",
+        "Type": "historical",
+        "Weather": "blizzard",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18880119",
+        "Type": "historical",
+        "Weather": "blizzard",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18881219",
+        "Type": "historical",
+        "Weather": "blizzard",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18890913",
+        "Type": "historical",
+        "Weather": "blizzard",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18891130",
+        "Type": "historical",
+        "Weather": "blizzard",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18901217",
+        "Type": "historical",
+        "Weather": "blizzard",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18911207",
+        "Type": "historical",
+        "Weather": "blizzard",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18920428",
+        "Type": "historical",
+        "Weather": "blizzard",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "18920722",
+        "Type": "historical",
+        "Weather": "blizzard",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "18921228",
+        "Type": "historical",
+        "Weather": "blizzard",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18941228",
+        "Type": "historical",
+        "Weather": "blizzard",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18981128",
+        "Type": "historical",
+        "Weather": "blizzard",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18990705",
+        "Type": "historical",
+        "Weather": "blizzard",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "18800315",
+        "Type": "historical",
+        "Weather": "cold",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18821117",
+        "Type": "historical",
+        "Weather": "cold",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18850128",
+        "Type": "historical",
+        "Weather": "cold",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18850204",
+        "Type": "historical",
+        "Weather": "cold",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "18851208",
+        "Type": "historical",
+        "Weather": "cold",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18861122",
+        "Type": "historical",
+        "Weather": "cold",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18880502",
+        "Type": "historical",
+        "Weather": "cold",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18910226",
+        "Type": "historical",
+        "Weather": "cold",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18910508",
+        "Type": "historical",
+        "Weather": "cold",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18910514",
+        "Type": "historical",
+        "Weather": "cold",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "18920208",
+        "Type": "historical",
+        "Weather": "cold",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: false  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18950430",
+        "Type": "historical",
+        "Weather": "cold",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18960219",
+        "Type": "historical",
+        "Weather": "cold",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18960806",
+        "Type": "historical",
+        "Weather": "cold",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18980824",
+        "Type": "historical",
+        "Weather": "cold",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18800804",
+        "Type": "historical",
+        "Weather": "deluge",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "18801201",
+        "Type": "historical",
+        "Weather": "deluge",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18820408",
+        "Type": "historical",
+        "Weather": "deluge",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18830131",
+        "Type": "historical",
+        "Weather": "deluge",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18870923",
+        "Type": "historical",
+        "Weather": "deluge",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18900428",
+        "Type": "historical",
+        "Weather": "deluge",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18920621",
+        "Type": "historical",
+        "Weather": "deluge",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18960529",
+        "Type": "historical",
+        "Weather": "deluge",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18811107",
+        "Type": "historical",
+        "Weather": "drought",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18821017",
+        "Type": "historical",
+        "Weather": "drought",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18830818",
+        "Type": "historical",
+        "Weather": "drought",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18830904",
+        "Type": "historical",
+        "Weather": "drought",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18860713",
+        "Type": "historical",
+        "Weather": "drought",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: false  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "18880721",
+        "Type": "historical",
+        "Weather": "drought",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18890925",
+        "Type": "historical",
+        "Weather": "drought",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18900212",
+        "Type": "historical",
+        "Weather": "drought",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18910606",
+        "Type": "historical",
+        "Weather": "drought",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18930711",
+        "Type": "historical",
+        "Weather": "drought",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18950108",
+        "Type": "historical",
+        "Weather": "drought",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18810326",
+        "Type": "historical",
+        "Weather": "freezing",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: false  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18870425",
+        "Type": "historical",
+        "Weather": "freezing",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18870811",
+        "Type": "historical",
+        "Weather": "freezing",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18880118",
+        "Type": "historical",
+        "Weather": "freezing",
+        "Classification": "Infrastructural impact: true\nAgricultural impact: true\nEcological impact: true\nEconomic impact: true\nSocietal impact: true\nHuman Health impact: true\nPolitical impact: false"
+    },
+    {
+        "Date": "18881213",
+        "Type": "historical",
+        "Weather": "freezing",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18890128",
+        "Type": "historical",
+        "Weather": "freezing",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: false  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18910915",
+        "Type": "historical",
+        "Weather": "freezing",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18920818",
+        "Type": "historical",
+        "Weather": "freezing",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18951116",
+        "Type": "historical",
+        "Weather": "freezing",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18970109",
+        "Type": "historical",
+        "Weather": "freezing",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18990214",
+        "Type": "historical",
+        "Weather": "freezing",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18991204",
+        "Type": "historical",
+        "Weather": "freezing",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "19900301",
+        "Type": "modern",
+        "Weather": "heat",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19911204",
+        "Type": "modern",
+        "Weather": "ice",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "19900103",
+        "Type": "modern",
+        "Weather": "ice",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "20090408",
+        "Type": "modern",
+        "Weather": "ice",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "20020304",
+        "Type": "modern",
+        "Weather": "ice",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "19971122",
+        "Type": "modern",
+        "Weather": "ice",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19930112",
+        "Type": "modern",
+        "Weather": "ice",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19910130",
+        "Type": "modern",
+        "Weather": "ice",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "19981022",
+        "Type": "modern",
+        "Weather": "ice",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "20100125",
+        "Type": "modern",
+        "Weather": "ice",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19970911",
+        "Type": "modern",
+        "Weather": "ice",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "19900320",
+        "Type": "modern",
+        "Weather": "ice",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "19900816",
+        "Type": "modern",
+        "Weather": "ice",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "19900205",
+        "Type": "modern",
+        "Weather": "storm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19900812",
+        "Type": "modern",
+        "Weather": "storm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19910612",
+        "Type": "modern",
+        "Weather": "storm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19910707",
+        "Type": "modern",
+        "Weather": "storm",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "19911112",
+        "Type": "modern",
+        "Weather": "storm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "19920204",
+        "Type": "modern",
+        "Weather": "storm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "19920510",
+        "Type": "modern",
+        "Weather": "storm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "19920813",
+        "Type": "modern",
+        "Weather": "storm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19920824",
+        "Type": "modern",
+        "Weather": "storm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "19920928",
+        "Type": "modern",
+        "Weather": "storm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "19930408",
+        "Type": "modern",
+        "Weather": "storm",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19900318",
+        "Type": "modern",
+        "Weather": "storm",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: false  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "19900408",
+        "Type": "modern",
+        "Weather": "storm",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18900620",
+        "Type": "historical",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18900410",
+        "Type": "historical",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18800907",
+        "Type": "historical",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "18810117",
+        "Type": "historical",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18810909",
+        "Type": "historical",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18840818",
+        "Type": "historical",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: false  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18870507",
+        "Type": "historical",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18870613",
+        "Type": "historical",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "18870708",
+        "Type": "historical",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: false  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18870711",
+        "Type": "historical",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "18880607",
+        "Type": "historical",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18880803",
+        "Type": "historical",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18890522",
+        "Type": "historical",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "18890712",
+        "Type": "historical",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "18900416",
+        "Type": "historical",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19910523",
+        "Type": "modern",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "19910724",
+        "Type": "modern",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: false  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "19920616",
+        "Type": "modern",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "19920628",
+        "Type": "modern",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "19930626",
+        "Type": "modern",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "19941025",
+        "Type": "modern",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "19950717",
+        "Type": "modern",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "19960720",
+        "Type": "modern",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "19970620",
+        "Type": "modern",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "19970716",
+        "Type": "modern",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "19980522",
+        "Type": "modern",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "19900323",
+        "Type": "modern",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "19900619",
+        "Type": "modern",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "19900622",
+        "Type": "modern",
+        "Weather": "thunder",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "19970719",
+        "Type": "modern",
+        "Weather": "Deluge",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19920216",
+        "Type": "modern",
+        "Weather": "Deluge",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "19980816",
+        "Type": "modern",
+        "Weather": "Deluge",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "20001110",
+        "Type": "modern",
+        "Weather": "Deluge",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19960725",
+        "Type": "modern",
+        "Weather": "Deluge",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "20070722",
+        "Type": "modern",
+        "Weather": "Deluge",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "19930730",
+        "Type": "modern",
+        "Weather": "Deluge",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "19970510",
+        "Type": "modern",
+        "Weather": "Deluge",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19961204",
+        "Type": "modern",
+        "Weather": "Deluge",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "19961017",
+        "Type": "modern",
+        "Weather": "Deluge",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "20080630",
+        "Type": "modern",
+        "Weather": "Deluge",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "19961228",
+        "Type": "modern",
+        "Weather": "Deluge",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "20001123",
+        "Type": "modern",
+        "Weather": "Deluge",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19900129",
+        "Type": "modern",
+        "Weather": "cold",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "19900106",
+        "Type": "modern",
+        "Weather": "cold",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19900131",
+        "Type": "modern",
+        "Weather": "cold",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "19900411",
+        "Type": "modern",
+        "Weather": "cold",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: false  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "19900228",
+        "Type": "modern",
+        "Weather": "cold",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "19900120",
+        "Type": "modern",
+        "Weather": "cold",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "19980124",
+        "Type": "modern",
+        "Weather": "Freezing",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19980107",
+        "Type": "modern",
+        "Weather": "Freezing",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "19980109",
+        "Type": "modern",
+        "Weather": "Freezing",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19990203",
+        "Type": "modern",
+        "Weather": "Freezing",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "20080105",
+        "Type": "modern",
+        "Weather": "Freezing",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "20071223",
+        "Type": "modern",
+        "Weather": "Freezing",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: false"
+    },
+    {
+        "Date": "19921115",
+        "Type": "modern",
+        "Weather": "Freezing",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: false  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "20020201",
+        "Type": "modern",
+        "Weather": "Freezing",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19980115",
+        "Type": "modern",
+        "Weather": "Freezing",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "19980118",
+        "Type": "modern",
+        "Weather": "Freezing",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    },
+    {
+        "Date": "19970106",
+        "Type": "modern",
+        "Weather": "Freezing",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: false  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: true"
+    },
+    {
+        "Date": "20070113",
+        "Type": "modern",
+        "Weather": "Freezing",
+        "Classification": "Infrastructural impact: false  \nAgricultural impact: true  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: false  \nPolitical impact: true"
+    },
+    {
+        "Date": "20000129",
+        "Type": "modern",
+        "Weather": "Freezing",
+        "Classification": "Infrastructural impact: true  \nAgricultural impact: false  \nEcological impact: true  \nEconomic impact: true  \nSocietal impact: true  \nHuman Health impact: true  \nPolitical impact: false"
+    }
+]

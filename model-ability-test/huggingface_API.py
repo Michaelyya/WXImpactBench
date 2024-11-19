@@ -2,9 +2,6 @@ from typing import List
 from llama_index.core.node_parser import SentenceSplitter
 import os
 import openai
-from openai import OpenAI
-import anthropic
-import google.generativeai as genai
 import json
 import re
 import random
@@ -15,6 +12,7 @@ import argparse
 import requests
 import json
 import csv
+huggingface_models=["meta-llama/Meta-Llama-3-8B-Instruct","mistralai/Mixtral-8x7B-Instruct-v0.1"]
 
 def split_text(text: str, chunk_size=500, chunk_overlap=50) -> List[str]:
     splitter = SentenceSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
@@ -119,7 +117,6 @@ def process_csv_to_json(input_csv, output_json, models=huggingface_models,prompt
                 print(f'Finished {count}')
                 count += 1
 
-huggingface_models=["meta-llama/Meta-Llama-3-8B-Instruct","mistralai/Mixtral-8x7B-Instruct-v0.1"]
 API_KEY = ""
 input_csv = "/content/selected_query.csv"  # Replace with your CSV file path
 output_json = "output_prompt_withDefinition4.json"  # Replace with your desired JSON file path

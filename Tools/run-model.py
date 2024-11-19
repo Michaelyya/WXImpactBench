@@ -125,7 +125,7 @@ def process_csv_to_json(input_csv, output_json):
 
 # Example usage
 input_csv = "selected_query.csv"  # Replace with your CSV file path
-output_json = "output.json"  # Replace with your desired JSON file path
+output_json = "test-run-chatgpt-4o-mini-output.json"  # Replace with your desired JSON file path
 
 process_csv_to_json(input_csv, output_json)
 print(f"Results written to {output_json}")

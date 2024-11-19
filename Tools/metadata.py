@@ -1,9 +1,8 @@
 import pandas as pd
 
 # Define core and general keywords
-core_keywords = ["earthquake", "flood", "wildfire", "hurricane", "drought", "landslide", "volcano", "tsunami",
-                 "avalanche"]
-general_keywords = ["emergency", "evacuation", "disaster", "relief", "damage", "recovery", "impact", "preparedness"]
+core_keywords = ["blizzard", "cold", "deluge", "drought", "flood", "freezing", "heat", "heatwave", "ice", "rain", "snow", "snowstorm", "storm", "thunder", "torrential"]
+general_keywords = ["crisis", "rescue", "safety", "hazard", "risk", "catastrophe", "casualties", "destruction", "resilience", "adaptation", "death"]
 temporal_trends = 'Y'
 
 
@@ -266,10 +265,14 @@ type_list = [
     "thunder_modern",
     "torrential_old"
 ]
+# extract_metadata("../statistics/FinalQuerySelected.csv", f'FinalQuerySelected_metadata.csv')
 # 24 in total?
 # i = 3
 # i = 22
 
 # i = 23 finished
-print(input_list[i])
-extract_metadata(input_list[i], f'./metadata/{type_list[i]}_metadata.csv')
+for i in range(0, len(input_list)):
+    if i == 3:
+        continue
+    print(input_list[i])
+    extract_metadata(input_list[i], f'./metadata/{type_list[i]}_metadata.csv')

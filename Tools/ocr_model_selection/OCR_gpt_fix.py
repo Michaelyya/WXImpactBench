@@ -30,7 +30,6 @@ def chunk_text(text, max_tokens=3000):
 
     return chunks
 
-# Function to correct OCR text using GPT-4
 def correct_ocr(text):
     response = client.chat.completions.create(model="gpt-4o-mini",
     messages=[

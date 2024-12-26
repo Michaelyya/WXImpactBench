@@ -2,8 +2,6 @@ from openai import OpenAI
 import json
 import csv
 
-
-
 def classify_text(input_text):
     # Construct the prompt
     prompt = f"""
@@ -96,7 +94,6 @@ def classify_text(input_text):
     except Exception as e:
         return f"Error: {e}"
 
-
 def process_csv_to_csv(input_csv, output_csv):
     count = 1
     
@@ -127,12 +124,36 @@ def process_csv_to_csv(input_csv, output_csv):
                 print(f'Finished {count}')
                 count = count + 1
                 
-                
+def process_csv_to_json(input_csv, output_json):
+    count = 1
+    results = []
 
-def test_single(text):
-    return classify_text(text)
-    
+    with open(input_csv, mode='r', encoding='utf-8') as csv_file:
+        csv_reader = csv.DictReader(csv_file)
 
+        for row in csv_reader:
+            if row.get("Remove") == "1":
+                continue 
+            text = row.get("Text", "")
+            date = row.get("Date", "")
+            event_type = row.get("Type", "")
+            weather = row.get("Weather", "")
+
+            classification = classify_text(text)
+
+            results.append({
+                "Date": date,
+                "Type": event_type,
+                "Weather": weather,
+                "Classification": classification
+            })
+            print(f'Finished {count}')
+            count = count + 1
+            if count >=5:
+                break
+
+    with open(output_json, mode='w', encoding='utf-8') as json_file:
+        json.dump(results, json_file, ensure_ascii=False, indent=4)                
 
 # Example usage
 input_csv = "blog/corrected/Final Query selected - selected_query.csv"  # Replace with your CSV file path
@@ -140,4 +161,4 @@ output_csv = "final.csv"  # Replace with your desired CSV file path
 
 process_csv_to_csv(input_csv, output_csv)
 print(f"Results written to {output_csv}")
-print(test_single("asked if the Board thought the unpaid capital could be collected. The Cashier replied that under the Act MONTREAL, FRIDAY, JANUARY 16, 1880, the stock of all those who did not pay up their calls could be confiscated. Mr. Baebsac asked on what basis was the valuation of the real estate made. The Cashier said the property owned by the Bank was on St Joseph and Seigneur streets, and gave a return of 5 per cent. The valuation was its actual worth. Mr. Babeiac entered into a lengthy charge against the management, contending that the Bank had not sufficient capital to do a profitable business, and that the shareholders had not been sufficiently consulted. A general meeting, he argued, should have been called after the Paquet defalcation, and also when the fusion with the Jacques Cartier Bank was under consideration. Had the latter been accomplished the result, he contended, would have been ruinous to the bank. Hon. Mr. Thibaudac replied to the charges made by Mr. Barbeau. The argument of the latter in relation to the circulation and reserve fund of the bank was absurd. As to calling a general meeting of the shareholders after the defalcation of Mr. Paquet, that would destroy the credit of the bank, for the shareholders under the excitement of the moment when rumors were afloat detrimental to various monetary institutions, would have caused precipitate action. As far as the fusion with the Jacques Cartier Bank was concerned, no measure to that end could have been passed without the consent of the shareholders and without an Act of Parliament to authorize it. It was not customary in the consideration of such questions for the directors to call a meeting until they had the scheme fully digested. Mr. Bxiqcx stated that if the fusion with the Jacques Cartier Bank was not proposed to the shareholders, it was because the directors of the Hochelaga Bank did not consider the terms offered by the Jacques Cartier Bank satisfactory. As to Mr. Barbeau's complaint that the defalcation of Mr. Paquet was owing to insufficient precautions having been taken by the Jacques Cartier Bank, he might say that the Jacques Cartier Bank's system in this respect had been the same as those then followed by other banks, and that the City and District Savings Bank had adopted further precautions in relation to its officers since Mr. Paquet's defalcation had been discovered. The Hochelaga Bank had also taken greater precautions and measures since that incident. Aid. Labebgi said that he had entered this meeting with views opposed to the management of the Hochelaga Bank, but since Mr. Barbeau's speech, he had altered his views and considered that the directors had done all in their power to provide against losses. He was, therefore, fully satisfied with the conduct of the directors and considered they should be re-elected. After some further discussion, the President made a speech which fairly carried away the audience and enlisted their sympathies and support on behalf of the directors. He sketched a history of the Bank, which was started in 1873"))
+print(classify_text("asked if the Board thought the unpaid capital could be collected. The Cashier replied that under the Act MONTREAL, FRIDAY, JANUARY 16, 1880, the stock of all those who did not pay up their calls could be confiscated. Mr. Baebsac asked on what basis was the valuation of the real estate made. The Cashier said the property owned by the Bank was on St Joseph and Seigneur streets, and gave a return of 5 per cent. The valuation was its actual worth. Mr. Babeiac entered into a lengthy charge against the management, contending that the Bank had not sufficient capital to do a profitable business, and that the shareholders had not been sufficiently consulted. A general meeting, he argued, should have been called after the Paquet defalcation, and also when the fusion with the Jacques Cartier Bank was under consideration. Had the latter been accomplished the result, he contended, would have been ruinous to the bank. Hon. Mr. Thibaudac replied to the charges made by Mr. Barbeau. The argument of the latter in relation to the circulation and reserve fund of the bank was absurd. As to calling a general meeting of the shareholders after the defalcation of Mr. Paquet, that would destroy the credit of the bank, for the shareholders under the excitement of the moment when rumors were afloat detrimental to various monetary institutions, would have caused precipitate action. As far as the fusion with the Jacques Cartier Bank was concerned, no measure to that end could have been passed without the consent of the shareholders and without an Act of Parliament to authorize it. It was not customary in the consideration of such questions for the directors to call a meeting until they had the scheme fully digested. Mr. Bxiqcx stated that if the fusion with the Jacques Cartier Bank was not proposed to the shareholders, it was because the directors of the Hochelaga Bank did not consider the terms offered by the Jacques Cartier Bank satisfactory. As to Mr. Barbeau's complaint that the defalcation of Mr. Paquet was owing to insufficient precautions having been taken by the Jacques Cartier Bank, he might say that the Jacques Cartier Bank's system in this respect had been the same as those then followed by other banks, and that the City and District Savings Bank had adopted further precautions in relation to its officers since Mr. Paquet's defalcation had been discovered. The Hochelaga Bank had also taken greater precautions and measures since that incident. Aid. Labebgi said that he had entered this meeting with views opposed to the management of the Hochelaga Bank, but since Mr. Barbeau's speech, he had altered his views and considered that the directors had done all in their power to provide against losses. He was, therefore, fully satisfied with the conduct of the directors and considered they should be re-elected. After some further discussion, the President made a speech which fairly carried away the audience and enlisted their sympathies and support on behalf of the directors. He sketched a history of the Bank, which was started in 1873"))

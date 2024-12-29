@@ -1,8 +1,15 @@
 from openai import OpenAI
 import json
 import csv
+import os
+import dotenv
 
-# Set your OpenAI API key
+dotenv.load_dotenv()
+
+client = OpenAI(
+  api_key=os.environ.get("OPENAI_API_KEY")
+)
+
 
 def parse_classification_response(response_text):
     # Initialize the result dictionary
@@ -11,7 +18,7 @@ def parse_classification_response(response_text):
         'Infrastructural impact': 0,
         'Agricultural impact': 0,
         'Ecological impact': 0,
-        'Economic impact': 0,
+        'Financial impact': 0,
         'Societal impact': 0,
         'Human Health impact': 0,
         'Political impact': 0
@@ -25,13 +32,12 @@ def parse_classification_response(response_text):
             result[category] = 1 if value == 'true' else 0
     return result
 
-def classify_text(input_text):
+def inference(input_text):
     prompt = f"""
     Given the following historical newspaper text:
     "{input_text}"
 
     Analyze the text and provide a binary classification (respond ONLY with 'true' or 'false') for each impact category based on explicit mentions in the text. Follow these specific guidelines:
-
     1. ***Infrastructural Impact***: Classify as 'true' if the text mentions any damage or disruption to physical infrastructure and essential services. This includes structural damage to buildings, roads, or bridges; any disruptions to transportation systems such as railway cancellations or road closures; interruptions to public utilities including power and water supply; any failures in communication networks; or damage to industrial facilities. Consider only explicit mentions of physical damage or service disruptions in your classification.
 
     2. ***Agricultural Impact***: Classify as 'true' if the text mentions any weather-related effects on farming and livestock management operations. This includes yield variations in crops and animal products; direct damage to crops, timber resources, or livestock; modifications to agricultural practices or schedules; disruptions to food production or supply chains; impacts on farming equipment and resources; or effects on agricultural inputs including soil conditions, water availability for farming, and essential materials such as seedlings, fertilizers, or animal feed.
@@ -50,13 +56,17 @@ def classify_text(input_text):
     - Focus on direct impacts rather than implications
     - Consider immediate and direct effects
 
-    Output format:
+    Remeber only output format as:
     Infrastructural: true/false
     Agricultural: true/false
     Ecological: true/false
     Financial: true/false
     Health: true/false
     Political: true/false
+
+    example:
+    text: "Collision and loss of life. Calhoun, March 20. During a heavy wind the other night the oyster pungie Jasper and Industry collided at the mouth of the Wicomico River, Virginia. The Jasper sank. Boats were unable to reach her in the darkness, and in the morning the captain and two men were found lashed to the rigging, one frozen to death. Four others of the crew had dropped off during the night and were drowned. Business failure. New York, March 20. James Pendergast, ship broker, has assigned; liabilities, $75,000. Schuloss Heilbronner, woolens, have also assigned; liabilities, $50,000. Happenings abroad. St. Louis, March 20. Leading jewelers have been notified from New York that an organized band of daring thieves is about to raid Western cities. Claiming fortune. Des Moines, March 20. Reports from this section show that the apple orchards have been killed by the severe winter. One farmer lost two hundred trees."
+    output: "Infrastructural: true, Agricultural: false, Ecological: true, Financial: true, Health: true, Political: false"
     """
 
     try:
@@ -65,38 +75,40 @@ def classify_text(input_text):
             messages=[
                 {"role": "system", "content": "You are an assistant specialized in analyzing historical weather event impacts from historical newspaper."},
                 {"role": "user", "content": prompt}
-            ]
+            ],
+            temperature=0,
+            top_p=0,
+            frequency_penalty=0,
+            presence_penalty=0
         )
+        print(response.choices[0].message.content)
         return response.choices[0].message.content.strip()
     except Exception as e:
         return f"Error: {e}"
 
-def process_csv_to_csv(input_csv, output_csv):
+def process_csv(input_csv, output_csv, prompt=None):
+    count = 1
     headers = [
-        'Date', 'Type', 'Model_Type',
+        "ID",'Date', 'Type', 'Model_Type',
         'Infrastructural impact', 'Agricultural impact',
         'Ecological impact', 'Economic impact',
         'Societal impact', 'Human Health impact',
         'Political impact'
     ]
-    
     with open(output_csv, mode='w', encoding='utf-8', newline='') as output_file:
         writer = csv.DictWriter(output_file, fieldnames=headers)
         writer.writeheader()
         
         with open(input_csv, mode='r', encoding='utf-8') as input_file:
             reader = csv.DictReader(input_file)
-            
             for row in reader:
-                if row.get("Remove") == "1":
-                    continue
-
                 # Get classification results
-                classification_response = classify_text(row.get("Text", ""))
+                classification_response = inference(row.get("Text", ""))
                 classification_dict = parse_classification_response(classification_response)
                 
                 # Create output row with exact format
                 output_row = {
+                    'ID': row.get("ID", ""),
                     'Date': row.get("Date", ""),
                     'Type': row.get("Type", ""),
                     'Model_Type': 'Classification-GPT4',
@@ -111,14 +123,15 @@ def process_csv_to_csv(input_csv, output_csv):
                 
                 writer.writerow(output_row)
 
+
 # def test_single(text):
 #     classification_response = classify_text(text)
 #     return parse_classification_response(classification_response)
 
-input_csv = "blog/corrected/test.csv"
+input_csv = "/Users/yonganyu/Desktop/vulnerability-Prediction-GEOG-research-/datasets/post-ocr_correction/test.csv"
 output_csv = "final_structured.csv"
 
-process_csv_to_csv(input_csv, output_csv)
+process_csv(input_csv, output_csv)
 print(f"Results written to {output_csv}")
 
 # test_result = test_single("your test text here")

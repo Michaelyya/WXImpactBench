@@ -1,38 +1,29 @@
 from openai import OpenAI
-import json
 import csv
 import os
 import dotenv
+import re
 
 dotenv.load_dotenv()
 
 client = OpenAI(
-  api_key=os.environ.get("OPENAI_API_KEY")
+    api_key=os.environ.get("OPENAI_API_KEY")
 )
 
+def extract_answer(full_text):
+    """Extract impact categories and their binary classification."""
+    pattern = (
+        r"(Infrastructural|"
+        r"Agricultural|"
+        r"Ecological|"
+        r"Financial|"
+        r"Health|"
+        r"Political):\s*(true|false)"
+    )
+    answers = re.findall(pattern, full_text)
+    return {key: 1 if value.lower() == "true" else 0 for key, value in answers}
 
-def parse_classification_response(response_text):
-    # Initialize the result dictionary
-    # Change 1/0 when impacts are added
-    result = {
-        'Infrastructural impact': 0,
-        'Agricultural impact': 0,
-        'Ecological impact': 0,
-        'Financial impact': 0,
-        'Societal impact': 0,
-        'Human Health impact': 0,
-        'Political impact': 0
-    }
-    for line in response_text.split('\n'):
-        if ':' in line:
-            category, value = line.split(':')
-            category = category.strip()
-            value = value.strip().lower()
-            # Convert true/false to 1/0
-            result[category] = 1 if value == 'true' else 0
-    return result
-
-def inference(input_text):
+def inference(input_text, model_name):
     prompt = f"""
     Given the following historical newspaper text:
     "{input_text}"
@@ -63,15 +54,19 @@ def inference(input_text):
     Financial: true/false
     Health: true/false
     Political: true/false
+    
+    if this is not weather-related event or you cannot find any impact, return all impact category as false
 
     example:
     text: "Collision and loss of life. Calhoun, March 20. During a heavy wind the other night the oyster pungie Jasper and Industry collided at the mouth of the Wicomico River, Virginia. The Jasper sank. Boats were unable to reach her in the darkness, and in the morning the captain and two men were found lashed to the rigging, one frozen to death. Four others of the crew had dropped off during the night and were drowned. Business failure. New York, March 20. James Pendergast, ship broker, has assigned; liabilities, $75,000. Schuloss Heilbronner, woolens, have also assigned; liabilities, $50,000. Happenings abroad. St. Louis, March 20. Leading jewelers have been notified from New York that an organized band of daring thieves is about to raid Western cities. Claiming fortune. Des Moines, March 20. Reports from this section show that the apple orchards have been killed by the severe winter. One farmer lost two hundred trees."
     output: "Infrastructural: true, Agricultural: false, Ecological: true, Financial: true, Health: true, Political: false"
+
+    ***Rmember only output true or false***
     """
 
     try:
         response = client.chat.completions.create(
-            model="gpt-4o",
+            model=model_name,
             messages=[
                 {"role": "system", "content": "You are an assistant specialized in analyzing historical weather event impacts from historical newspaper."},
                 {"role": "user", "content": prompt}
@@ -82,57 +77,68 @@ def inference(input_text):
             presence_penalty=0
         )
         print(response.choices[0].message.content)
-        return response.choices[0].message.content.strip()
+        result = response.choices[0].message.content.strip()
+        return result, extract_answer(result)
     except Exception as e:
-        return f"Error: {e}"
+        error_message = f"Error: {e}"
+        return error_message, {}
 
-def process_csv(input_csv, output_csv, prompt=None):
-    count = 1
-    headers = [
-        "ID",'Date', 'Type', 'Model_Type',
-        'Infrastructural impact', 'Agricultural impact',
-        'Ecological impact', 'Economic impact',
-        'Societal impact', 'Human Health impact',
-        'Political impact'
-    ]
-    with open(output_csv, mode='w', encoding='utf-8', newline='') as output_file:
-        writer = csv.DictWriter(output_file, fieldnames=headers)
-        writer.writeheader()
-        
-        with open(input_csv, mode='r', encoding='utf-8') as input_file:
-            reader = csv.DictReader(input_file)
-            for row in reader:
-                # Get classification results
-                classification_response = inference(row.get("Text", ""))
-                classification_dict = parse_classification_response(classification_response)
-                
-                # Create output row with exact format
-                output_row = {
-                    'ID': row.get("ID", ""),
-                    'Date': row.get("Date", ""),
-                    'Type': row.get("Type", ""),
-                    'Model_Type': 'Classification-GPT4',
-                    'Infrastructural impact': classification_dict.get('Infrastructural', 0),
-                    'Agricultural impact': classification_dict.get('Agricultural', 0),
-                    'Ecological impact': classification_dict.get('Ecological', 0),
-                    'Economic impact': classification_dict.get('Financial', 0),
-                    'Societal impact': classification_dict.get('Societal', 0),
-                    'Human Health impact': classification_dict.get('Health', 0),
-                    'Political impact': classification_dict.get('Political', 0)
-                }
-                
-                writer.writerow(output_row)
+def process_csv(input_csv, output_dir, models):
+    """Process input CSV with multiple models and save results."""
+    for model_name in models:
+        # Prepare output file
+        model_file_name = model_name.replace("-", "_") + "_Labelled.csv"
+        output_csv = os.path.join(output_dir, model_file_name)
+
+        # Define CSV headers
+        headers = [
+            "ID", "Date", "Type", "Model_Type",
+            "Infrastructural impact", "Agricultural impact",
+            "Ecological impact", "Financial impact",
+            "Health impact", "Political impact"
+        ]
+
+        with open(output_csv, mode='w', encoding='utf-8', newline='') as output_file:
+            writer = csv.DictWriter(output_file, fieldnames=headers)
+            writer.writeheader()
+
+            with open(input_csv, mode='r', encoding='utf-8') as input_file:
+                reader = csv.DictReader(input_file)
+                for count, row in enumerate(reader, start=1):
+                    original_text = row.get("Text", "")
+                    date = row.get("Date", "")
+                    type_row = row.get("Type", "")
+                    id_row = row.get("ID", "")
+                    result = inference(original_text, model_name)
+
+                    if not isinstance(result, tuple) or len(result) != 2:
+                        print(f"Skipping row {count} for model {model_name} due to unexpected response format.")
+                        continue
+
+                    classification_text, extracted_response = result
+                    result = {
+                        "ID": id_row,
+                        "Date": date,
+                        "Type": type_row,
+                        "Model_Type": model_name,
+                        "Infrastructural impact": extracted_response.get("Infrastructural", 0),
+                        "Agricultural impact": extracted_response.get("Agricultural", 0),
+                        "Ecological impact": extracted_response.get("Ecological", 0),
+                        "Financial impact": extracted_response.get("Financial", 0),
+                        "Health impact": extracted_response.get("Health", 0),
+                        "Political impact": extracted_response.get("Political", 0),
+                    }
+
+                    writer.writerow(result)
+                    print(f"Processed row {count} for model {model_name}")
 
 
-# def test_single(text):
-#     classification_response = classify_text(text)
-#     return parse_classification_response(classification_response)
+input_csv = "./datasets/context_data/long.csv"
+output_dir = "./datasets/context_data/"
+models = ["gpt-4", "gpt-4o"]
 
-input_csv = "/Users/yonganyu/Desktop/vulnerability-Prediction-GEOG-research-/datasets/post-ocr_correction/test.csv"
-output_csv = "final_structured.csv"
-
-process_csv(input_csv, output_csv)
-print(f"Results written to {output_csv}")
+process_csv(input_csv, output_dir, models)
+print("Done")
 
 # test_result = test_single("your test text here")
 # print("Test result:", test_result)

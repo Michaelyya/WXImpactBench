@@ -77,6 +77,9 @@ def inference(input_text):
                 {"role": "user", "content": prompt}
             ],
             temperature=0,
+            top_p=0,
+            frequency_penalty=0,
+            presence_penalty=0
         )
         print(response.choices[0].message.content)
         return response.choices[0].message.content.strip()

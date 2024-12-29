@@ -18,7 +18,7 @@ def parse_classification_response(response_text):
         'Infrastructural impact': 0,
         'Agricultural impact': 0,
         'Ecological impact': 0,
-        'Economic impact': 0,
+        'Financial impact': 0,
         'Societal impact': 0,
         'Human Health impact': 0,
         'Political impact': 0
@@ -32,7 +32,7 @@ def parse_classification_response(response_text):
             result[category] = 1 if value == 'true' else 0
     return result
 
-def classify_text(input_text):
+def inference(input_text):
     prompt = f"""
     Given the following historical newspaper text:
     "{input_text}"
@@ -83,38 +83,43 @@ def classify_text(input_text):
     except Exception as e:
         return f"Error: {e}"
 
-def process_csv_to_csv(input_csv, output_csv):
+def process_csv(input_csv, output_csv, prompt=None):
+    count = 1
     headers = [
-        'Date', 'Type', 'Model_Type',
+        "ID",'Date', 'Type', 'Model_Type',
         'Infrastructural impact', 'Agricultural impact',
         'Ecological impact', 'Economic impact',
         'Societal impact', 'Human Health impact',
         'Political impact'
     ]
-    
     with open(output_csv, mode='w', encoding='utf-8', newline='') as output_file:
         writer = csv.DictWriter(output_file, fieldnames=headers)
         writer.writeheader()
         
         with open(input_csv, mode='r', encoding='utf-8') as input_file:
             reader = csv.DictReader(input_file)
-            classification_response = classify_text(row.get("Text", ""))
-            classification_dict = parse_classification_response(classification_response)
-            
-            output_row = {
-                'Date': row.get("Date", ""),
-                'Type': row.get("Type", ""),
-                'Model_Type': 'Classification-GPT4',
-                'Infrastructural impact': classification_dict.get('Infrastructural', 0),
-                'Agricultural impact': classification_dict.get('Agricultural', 0),
-                'Ecological impact': classification_dict.get('Ecological', 0),
-                'Economic impact': classification_dict.get('Financial', 0),
-                'Societal impact': classification_dict.get('Societal', 0),
-                'Human Health impact': classification_dict.get('Health', 0),
-                'Political impact': classification_dict.get('Political', 0)
-            }
-            
-            writer.writerow(output_row)
+            for row in reader:
+                # Get classification results
+                classification_response = inference(row.get("Text", ""))
+                classification_dict = parse_classification_response(classification_response)
+                
+                # Create output row with exact format
+                output_row = {
+                    'ID': row.get("ID", ""),
+                    'Date': row.get("Date", ""),
+                    'Type': row.get("Type", ""),
+                    'Model_Type': 'Classification-GPT4',
+                    'Infrastructural impact': classification_dict.get('Infrastructural', 0),
+                    'Agricultural impact': classification_dict.get('Agricultural', 0),
+                    'Ecological impact': classification_dict.get('Ecological', 0),
+                    'Economic impact': classification_dict.get('Financial', 0),
+                    'Societal impact': classification_dict.get('Societal', 0),
+                    'Human Health impact': classification_dict.get('Health', 0),
+                    'Political impact': classification_dict.get('Political', 0)
+                }
+                
+                writer.writerow(output_row)
+
 
 # def test_single(text):
 #     classification_response = classify_text(text)
@@ -123,7 +128,7 @@ def process_csv_to_csv(input_csv, output_csv):
 input_csv = "/Users/yonganyu/Desktop/vulnerability-Prediction-GEOG-research-/datasets/post-ocr_correction/test.csv"
 output_csv = "final_structured.csv"
 
-process_csv_to_csv(input_csv, output_csv)
+process_csv(input_csv, output_csv)
 print(f"Results written to {output_csv}")
 
 # test_result = test_single("your test text here")

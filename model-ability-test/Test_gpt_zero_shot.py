@@ -1,38 +1,28 @@
 from openai import OpenAI
-import json
 import csv
 import os
 import dotenv
+import re
 
 dotenv.load_dotenv()
 
 client = OpenAI(
-  api_key=os.environ.get("OPENAI_API_KEY")
+    api_key=os.environ.get("OPENAI_API_KEY")
 )
 
+def extract_answer(full_text):
+    pattern = (
+        r"(Infrastructural|"
+        r"Agricultural|"
+        r"Ecological|"
+        r"Financial|"
+        r"Health|"
+        r"Political):\s*(true|false)"
+    )
+    answers = re.findall(pattern, full_text)
+    return {key: 1 if value.lower() == "true" else 0 for key, value in answers}
 
-def parse_classification_response(response_text):
-    # Initialize the result dictionary
-    # Change 1/0 when impacts are added
-    result = {
-        'Infrastructural impact': 0,
-        'Agricultural impact': 0,
-        'Ecological impact': 0,
-        'Financial impact': 0,
-        'Societal impact': 0,
-        'Human Health impact': 0,
-        'Political impact': 0
-    }
-    for line in response_text.split('\n'):
-        if ':' in line:
-            category, value = line.split(':')
-            category = category.strip()
-            value = value.strip().lower()
-            # Convert true/false to 1/0
-            result[category] = 1 if value == 'true' else 0
-    return result
-
-def inference(input_text):
+def inference(input_text, model_name):
     prompt = f"""
     Given the following historical newspaper text:
     "{input_text}"
@@ -63,11 +53,15 @@ def inference(input_text):
     Financial: true/false
     Health: true/false
     Political: true/false
+    
+    if this is not weather-related event or you cannot find any impact, return all impact category as false
+
+    ***Rmember only output true or false***
     """
 
     try:
         response = client.chat.completions.create(
-            model="gpt-4o",
+            model=model_name,
             messages=[
                 {"role": "system", "content": "You are an assistant specialized in analyzing historical weather event impacts from historical newspaper."},
                 {"role": "user", "content": prompt}
@@ -75,59 +69,67 @@ def inference(input_text):
             temperature=0,
             top_p=0,
             frequency_penalty=0,
-            presence_penalty=0)
+            presence_penalty=0
+        )
         print(response.choices[0].message.content)
-        return response.choices[0].message.content.strip()
+        result = response.choices[0].message.content.strip()
+        return result, extract_answer(result)
     except Exception as e:
-        return f"Error: {e}"
+        error_message = f"Error: {e}"
+        return error_message, {}
 
-def process_csv(input_csv, output_csv, prompt=None):
-    count = 1
-    headers = [
-        "ID",'Date', 'Type', 'Model_Type',
-        'Infrastructural impact', 'Agricultural impact',
-        'Ecological impact', 'Economic impact',
-        'Societal impact', 'Human Health impact',
-        'Political impact'
-    ]
-    with open(output_csv, mode='w', encoding='utf-8', newline='') as output_file:
-        writer = csv.DictWriter(output_file, fieldnames=headers)
-        writer.writeheader()
-        
-        with open(input_csv, mode='r', encoding='utf-8') as input_file:
-            reader = csv.DictReader(input_file)
-            for row in reader:
-                # Get classification results
-                classification_response = inference(row.get("Text", ""))
-                classification_dict = parse_classification_response(classification_response)
-                
-                # Create output row with exact format
-                output_row = {
-                    'ID': row.get("ID", ""),
-                    'Date': row.get("Date", ""),
-                    'Type': row.get("Type", ""),
-                    'Model_Type': 'Classification-GPT4',
-                    'Infrastructural impact': classification_dict.get('Infrastructural', 0),
-                    'Agricultural impact': classification_dict.get('Agricultural', 0),
-                    'Ecological impact': classification_dict.get('Ecological', 0),
-                    'Economic impact': classification_dict.get('Financial', 0),
-                    'Societal impact': classification_dict.get('Societal', 0),
-                    'Human Health impact': classification_dict.get('Health', 0),
-                    'Political impact': classification_dict.get('Political', 0)
-                }
-                
-                writer.writerow(output_row)
+def process_csv(input_csv, output_dir, models):
+    for model_name in models:
+        model_file_name = model_name.replace("-", "_") + "_zeroshot_short.csv"
+        output_csv = os.path.join(output_dir, model_file_name)
+        headers = [
+            "ID", "Date", "Type", "Model_Type",
+            "Infrastructural impact", "Agricultural impact",
+            "Ecological impact", "Financial impact",
+            "Health impact", "Political impact"
+        ]
+
+        with open(output_csv, mode='w', encoding='utf-8', newline='') as output_file:
+            writer = csv.DictWriter(output_file, fieldnames=headers)
+            writer.writeheader()
+
+            with open(input_csv, mode='r', encoding='utf-8') as input_file:
+                reader = csv.DictReader(input_file)
+                for count, row in enumerate(reader, start=1):
+                    original_text = row.get("Text", "")
+                    date = row.get("Date", "")
+                    type_row = row.get("Type", "")
+                    id_row = row.get("ID", "")
+                    result = inference(original_text, model_name)
+
+                    if not isinstance(result, tuple) or len(result) != 2:
+                        print(f"Skipping row {count} for model {model_name} due to unexpected response format.")
+                        continue
+
+                    classification_text, extracted_response = result
+                    result = {
+                        "ID": id_row,
+                        "Date": date,
+                        "Type": type_row,
+                        "Model_Type": model_name,
+                        "Infrastructural impact": extracted_response.get("Infrastructural", 0),
+                        "Agricultural impact": extracted_response.get("Agricultural", 0),
+                        "Ecological impact": extracted_response.get("Ecological", 0),
+                        "Financial impact": extracted_response.get("Financial", 0),
+                        "Health impact": extracted_response.get("Health", 0),
+                        "Political impact": extracted_response.get("Political", 0),
+                    }
+
+                    writer.writerow(result)
+                    print(f"Processed row {count} for model {model_name}")
 
 
-# def test_single(text):
-#     classification_response = classify_text(text)
-#     return parse_classification_response(classification_response)
+input_csv = "./datasets/context_data/short.csv"
+output_dir = "./datasets/context_data/"
+models = ["gpt-3.5-turbo", "gpt-4", "gpt-4o"]
 
-input_csv = "/Users/yonganyu/Desktop/vulnerability-Prediction-GEOG-research-/datasets/post-ocr_correction/test.csv"
-output_csv = "final_structured.csv"
-
-process_csv(input_csv, output_csv)
-print(f"Results written to {output_csv}")
+process_csv(input_csv, output_dir, models)
+print("Done")
 
 # test_result = test_single("your test text here")
 # print("Test result:", test_result)

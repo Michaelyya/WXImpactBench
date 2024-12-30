@@ -11,7 +11,6 @@ client = OpenAI(
 )
 
 def extract_answer(full_text):
-    """Extract impact categories and their binary classification."""
     pattern = (
         r"(Infrastructural|"
         r"Agricultural|"
@@ -84,13 +83,9 @@ def inference(input_text, model_name):
         return error_message, {}
 
 def process_csv(input_csv, output_dir, models):
-    """Process input CSV with multiple models and save results."""
     for model_name in models:
-        # Prepare output file
-        model_file_name = model_name.replace("-", "_") + "_Labelled.csv"
+        model_file_name = model_name.replace("-", "_") + "_oneshot_short.csv"
         output_csv = os.path.join(output_dir, model_file_name)
-
-        # Define CSV headers
         headers = [
             "ID", "Date", "Type", "Model_Type",
             "Infrastructural impact", "Agricultural impact",
@@ -133,9 +128,9 @@ def process_csv(input_csv, output_dir, models):
                     print(f"Processed row {count} for model {model_name}")
 
 
-input_csv = "./datasets/context_data/long.csv"
+input_csv = "./datasets/context_data/short.csv"
 output_dir = "./datasets/context_data/"
-models = ["gpt-4", "gpt-4o"]
+models = ["gpt-3.5-turbo", "gpt-4", "gpt-4o"]
 
 process_csv(input_csv, output_dir, models)
 print("Done")

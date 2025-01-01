@@ -8,7 +8,7 @@ import csv
 import transformers
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
-API_KEY=""
+API_KEY= "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"
 from huggingface_hub import login
 login(token=API_KEY)
 model_name = "Qwen/Qwen2.5-7B-Instruct"
@@ -115,7 +115,7 @@ def process_csv(input_csv, output_csv, prompt=None):
                 count += 1
 
 
-input_csv = "model-ability-test/long.csv" 
-out_csv = "model-ability-test/dataset_zeroshot_long.csv" 
+input_csv = ".\datasets\context_data\short.csv" 
+out_csv = "model-ability-test/Qwen_2.5_7B_zeroshot_short.csv" 
 process_csv(input_csv,out_csv)
 print(f"Results written to {out_csv}")

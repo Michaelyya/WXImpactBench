@@ -8,7 +8,7 @@ import csv
 import transformers
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
-API_KEY= "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"
+API_KEY= ""
 from huggingface_hub import login
 login(token=API_KEY)
 model_name = "Qwen/Qwen2.5-7B-Instruct"

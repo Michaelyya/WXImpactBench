@@ -1,0 +1,25 @@
+Model_Type,Metric,Infrastructural impact,Political impact,Financial impact,Ecological impact,Agricultural impact,Human health impact
+gpt-4,Precision,0.6569,0.3091,0.4069,0.3333,0.5327,0.526
+gpt-4,Recall,0.8121,0.5667,0.8557,0.3148,0.7215,0.7043
+gpt-4,F1,0.7263,0.4,0.5515,0.3238,0.6129,0.6022
+gpt-4,Accuracy,0.7089,0.7061,0.611,0.7954,0.7925,0.6916
+gpt-4o,Precision,0.7123,0.5493,0.531,0.407,0.6311,0.6643
+gpt-4o,Recall,0.9455,0.65,0.7938,0.6481,0.8228,0.8087
+gpt-4o,F1,0.8125,0.5954,0.6364,0.5,0.7143,0.7294
+gpt-4o,Accuracy,0.7925,0.8473,0.7464,0.7983,0.8501,0.8012
+mistralai/Mixtral-8x7B-Instruct-v0.1,Precision,0.6879,0.1667,0.3784,0.2286,0.4259,0.4842
+mistralai/Mixtral-8x7B-Instruct-v0.1,Recall,0.6783,0.1,0.4719,0.3137,0.3239,0.4466
+mistralai/Mixtral-8x7B-Instruct-v0.1,F1,0.6831,0.125,0.42,0.2645,0.368,0.4646
+mistralai/Mixtral-8x7B-Instruct-v0.1,Accuracy,0.7059,0.7749,0.627,0.7138,0.7443,0.6581
+gpt-3.5-turbo,Precision,0.6567,0.3258,0.3578,0.2651,0.5,0.5725
+gpt-3.5-turbo,Recall,0.9273,0.4833,0.7526,0.8148,0.6709,0.6522
+gpt-3.5-turbo,F1,0.7688,0.3893,0.485,0.4,0.573,0.6098
+gpt-3.5-turbo,Accuracy,0.7349,0.7378,0.5533,0.6196,0.7723,0.7233
+meta-llama/Llama-3.1-8B-Instruct,Precision,0.7419,0.2558,0.3641,0.3375,0.4579,0.5328
+meta-llama/Llama-3.1-8B-Instruct,Recall,0.697,0.55,0.7732,0.5,0.6203,0.5652
+meta-llama/Llama-3.1-8B-Instruct,F1,0.7188,0.3492,0.495,0.403,0.5269,0.5485
+meta-llama/Llama-3.1-8B-Instruct,Accuracy,0.7406,0.6455,0.5591,0.7695,0.7464,0.6916
+Qwen/Qwen2.5-7B-Instruct,Precision,0.6468,0.4828,0.3987,0.2549,0.6744,0.4203
+Qwen/Qwen2.5-7B-Instruct,Recall,0.7879,0.2333,0.6289,0.7222,0.3671,0.5043
+Qwen/Qwen2.5-7B-Instruct,F1,0.7104,0.3146,0.488,0.3768,0.4754,0.4585
+Qwen/Qwen2.5-7B-Instruct,Accuracy,0.6945,0.8242,0.6311,0.6282,0.8156,0.6052

@@ -1,0 +1,37 @@
+Model_Type,Impact_Column,TP,FP,TN,FN
+Qwen/Qwen2.5-7B-Instruct,Infrastructural impact,130,71,111,35
+Qwen/Qwen2.5-7B-Instruct,Political impact,14,15,272,46
+Qwen/Qwen2.5-7B-Instruct,Financial impact,61,92,158,36
+Qwen/Qwen2.5-7B-Instruct,Ecological impact,39,114,179,15
+Qwen/Qwen2.5-7B-Instruct,Agricultural impact,29,14,254,50
+Qwen/Qwen2.5-7B-Instruct,Human health impact,58,80,152,57
+meta-llama/Llama-3.1-8B-Instruct,Infrastructural impact,115,40,142,50
+meta-llama/Llama-3.1-8B-Instruct,Political impact,33,96,191,27
+meta-llama/Llama-3.1-8B-Instruct,Financial impact,75,131,119,22
+meta-llama/Llama-3.1-8B-Instruct,Ecological impact,27,53,240,27
+meta-llama/Llama-3.1-8B-Instruct,Agricultural impact,49,58,210,30
+meta-llama/Llama-3.1-8B-Instruct,Human health impact,65,57,175,50
+gpt-4,Infrastructural impact,134,70,112,31
+gpt-4,Political impact,34,76,211,26
+gpt-4,Financial impact,83,121,129,14
+gpt-4,Ecological impact,17,34,259,37
+gpt-4,Agricultural impact,57,50,218,22
+gpt-4,Human health impact,81,73,159,34
+gpt-3.5-turbo,Infrastructural impact,153,80,102,12
+gpt-3.5-turbo,Political impact,29,60,227,31
+gpt-3.5-turbo,Financial impact,73,131,119,24
+gpt-3.5-turbo,Ecological impact,44,122,171,10
+gpt-3.5-turbo,Agricultural impact,53,53,215,26
+gpt-3.5-turbo,Human health impact,75,56,176,40
+gpt-4o,Infrastructural impact,156,63,119,9
+gpt-4o,Political impact,39,32,255,21
+gpt-4o,Financial impact,77,68,182,20
+gpt-4o,Ecological impact,35,51,242,19
+gpt-4o,Agricultural impact,65,38,230,14
+gpt-4o,Human health impact,93,47,185,22
+mistralai/Mixtral-8x7B-Instruct-v0.1,Infrastructural impact,111,46,136,54
+mistralai/Mixtral-8x7B-Instruct-v0.1,Political impact,6,27,260,54
+mistralai/Mixtral-8x7B-Instruct-v0.1,Financial impact,48,75,175,49
+mistralai/Mixtral-8x7B-Instruct-v0.1,Ecological impact,16,57,236,38
+mistralai/Mixtral-8x7B-Instruct-v0.1,Agricultural impact,27,34,234,52
+mistralai/Mixtral-8x7B-Instruct-v0.1,Human health impact,51,53,179,64

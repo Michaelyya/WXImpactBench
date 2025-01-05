@@ -21,9 +21,12 @@ for idx, row in data.iterrows():
     passages = distractors + [correct_passage]
     random.shuffle(passages)
     
+    correct_index = passages.index(correct_passage) + 1
+    
     new_row = {
         "id": idx + 1,
         "query": query,
+        "correct_passage_index": correct_index
     }
     for i, passage in enumerate(passages):
         new_row[f"passage_{i+1}"] = passage

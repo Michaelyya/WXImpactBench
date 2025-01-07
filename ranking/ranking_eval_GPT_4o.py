@@ -26,7 +26,7 @@ class RankingResult:
     ranks: List[int]
 
 class GPTReranker:
-    def __init__(self, api_key: str, model: str = "gpt-3.5"):
+    def __init__(self, api_key: str, model: str = "gpt-4o"):
         self.client = OpenAI(api_key=api_key)
         self.model = model
         

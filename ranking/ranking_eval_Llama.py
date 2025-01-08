@@ -18,7 +18,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 dotenv.load_dotenv()
 API_KEY = "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"
 login(token=API_KEY)
-model_name = "Qwen/Qwen2.5-7B-Instruct"
+model_name = "meta-llama/Llama-3.1-8B-Instruct"
 
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
@@ -54,7 +54,6 @@ Query: {query}
 I will give you passages numbered from {start_idx+1} to {start_idx+len(passages)}. Rank them by relevance to the query, with the most relevant first.
 
 """
-        # Add passages
         for i, passage in enumerate(passages):
             prompt += f"[{start_idx+i+1}] {passage}\n"
         
@@ -69,7 +68,6 @@ Format: [most_relevant] > [next] > [next]. No explanation needed.[/INST]"""
         
         for attempt in range(max_retries):
             try:
-                # Tokenize and generate
                 inputs = self.tokenizer(prompt, return_tensors="pt").to(self.model.device)
                 
                 with torch.no_grad():
@@ -80,10 +78,7 @@ Format: [most_relevant] > [next] > [next]. No explanation needed.[/INST]"""
                         do_sample=False,
                         pad_token_id=self.tokenizer.eos_token_id
                     )
-                
-                # Decode the response
                 ranking_str = self.tokenizer.decode(outputs[0], skip_special_tokens=True)
-                # Extract just the response part (after the prompt)
                 ranking_str = ranking_str[len(prompt):]
                 
                 raw_ranks = Evaluator.clean_ranking_response(ranking_str)
@@ -177,7 +172,6 @@ def process_query(row: pd.Series, reranker: GPTReranker) -> Optional[RankingResu
         return None
 
 def save_results(results: List[RankingResult], filename: str):
-    """Save results to a JSON file."""
     results_data = []
     for result in results:
         results_data.append({
@@ -191,25 +185,6 @@ def save_results(results: List[RankingResult], filename: str):
     
     with open(filename, 'w', encoding='utf-8') as f:
         json.dump(results_data, f, ensure_ascii=False, indent=2)
-
-def load_results(filename: str) -> List[RankingResult]:
-    """Load results from a JSON file."""
-    with open(filename, 'r', encoding='utf-8') as f:
-        results_data = json.load(f)
-    
-    results = []
-    for data in results_data:
-        result = RankingResult(
-            query=data['query'],
-            correct_passage=data['correct_passage'],
-            ranking=data['ranking'],
-            correct_idx=data['correct_idx'],
-            passages=data['passages'],
-            ranks=data['ranks']
-        )
-        results.append(result)
-    
-    return results
 
 
 def main():

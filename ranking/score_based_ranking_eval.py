@@ -1,14 +1,14 @@
 import pandas as pd
 import time
 import os
-import dotenv
+# import dotenv
 import numpy as np
 from tqdm import tqdm
 from openai import OpenAI
 import re
 
-dotenv.load_dotenv()
-model = "gpt-3.5-turbo"
+# dotenv.load_dotenv()
+model = "gpt-4"
 
 class OpenAIScorer:
     def __init__(self, api_key):
@@ -39,7 +39,7 @@ class OpenAIScorer:
                 )
                 match = re.search(r'\d+', response.choices[0].message.content.strip())
                 score = int(match.group()) if match else -1
-                print(score)
+                # print(score)
                 return score
             except Exception as e:
                 print(f"Attempt {attempt + 1} failed: {str(e)}")
@@ -74,7 +74,8 @@ def evaluate_rankings(ranks, correct_idx):
 
 df = pd.read_csv('query_and_100_passages.csv')
 reranked_results = []
-api_key = os.environ.get("OPENAI_API_KEY")
+# api_key = os.environ.get("OPENAI_API_KEY")
+
 
 scorer = OpenAIScorer(api_key)
 
@@ -123,8 +124,8 @@ for idx, result in enumerate(reranked_results, 1):
     print(f"\nQuery {idx}:")
     print(f"Query: {result['query']}")
     print(f"Scores: {result['scores']}")
-    print(f"Sorted indices: {result['sorted_indices']}")
-    print(f"Correct passage index: {result['correct_idx']}")
+    # print(f"Sorted indices: {result['sorted_indices']}")
+    # print(f"Correct passage index: {result['correct_idx']}")
     print(f"NDCG@1:  {result['ndcg_scores']['ndcg@1']:.4f}")
     print(f"NDCG@5:  {result['ndcg_scores']['ndcg@5']:.4f}")
     print(f"NDCG@10: {result['ndcg_scores']['ndcg@10']:.4f}")

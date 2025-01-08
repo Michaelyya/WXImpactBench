@@ -16,30 +16,28 @@ from concurrent.futures import ThreadPoolExecutor
 
 dotenv.load_dotenv()
 
-@dataclass
-class RankingResult:
-    query: str
-    correct_passage: str
-    ranking: str
-    correct_idx: int
-    passages: List[str]
-    ranks: List[int]
-
 class GPTReranker:
-    def __init__(self, api_key: str, model: str = "gpt-3.5-turbo", batch_size: int = 40):
+    def __init__(self, api_key: str, model: str = "gpt-3.5-turbo", window_size: int = 30, overlap: int = 10):
+        if window_size <= overlap:
+            raise ValueError("Window size must be greater than overlap")
+        if overlap < 0:
+            raise ValueError("Overlap must be non-negative")
         self.client = OpenAI(api_key=api_key)
         self.model = model
-        self.batch_size = batch_size
+        self.window_size = window_size
+        self.overlap = overlap
         
     def _create_messages(self, query: str, passages: List[str], start_idx: int) -> List[Dict[str, str]]:
         messages = [
             {
                 "role": "system",
-                "content": "You are an expert that ranks passages based on their relevance to a given query. The most relevant passage should answer the query"
+                "content": """You are an expert that ranks passages based on their relevance to a given query. 
+                The most relevant passage should be ranked first. 
+                Important: Do not just sort the passage numbers. Evaluate each passage's content for relevance."""
             },
             {
                 "role": "user",
-                "content": f"Query: {query}\n\nRank the following passages [{start_idx+1} to {start_idx+len(passages)}] by relevance."
+                "content": f"Query: {query}\n\nI will give you passages numbered from {start_idx+1} to {start_idx+len(passages)}. Rank them by relevance to the query, with the most relevant first."
             }
         ]
         
@@ -51,40 +49,77 @@ class GPTReranker:
             
         messages.append({
             "role": "user",
-            "content": "Provide ranking as numbers separated by '>', e.g., [3] > [1] > [2] > [5] > [4]. No explanation needed."
+            "content": "Based on the content of each passage (not just their numbers), rank them from most to least relevant. Format: [most_relevant] > [next] > [next]. No explanation needed."
         })
         
         return messages
 
-    def get_ranking(self, query: str, passages: List[str], start_idx: int = 0, max_retries: int = 3) -> str:
-        all_rankings = []
+    def get_ranking_for_group(self, query: str, passages: List[str], start_idx: int = 0, max_retries: int = 3) -> List[int]:
+        messages = self._create_messages(query, passages, start_idx)
+        for attempt in range(max_retries):
+            try:
+                response = self.client.chat.completions.create(
+                    model=self.model,
+                    messages=messages,
+                    temperature=0,
+                    max_tokens=150,
+                    timeout=30
+                )
+                ranking_str = response.choices[0].message.content.strip()
+                raw_ranks = Evaluator.clean_ranking_response(ranking_str)
+                global_ranks = []
+                for rank in raw_ranks:
+                    local_idx = rank - (start_idx + 1)
+                    if 0 <= local_idx < len(passages):
+                        global_idx = start_idx + local_idx
+                        global_ranks.append(global_idx)
+                
+                return global_ranks
+            except Exception as e:
+                print(f"Attempt {attempt + 1} failed: {str(e)}")
+                if attempt == max_retries - 1:
+                    raise
+                time.sleep(5)
+
+    def get_ranking(self, query: str, passages: List[str]) -> str:
+        if not passages:
+            raise ValueError("No passages provided")
         
-        for i in range(0, len(passages), self.batch_size):
-            batch_passages = passages[i:i + self.batch_size]
-            batch_start_idx = start_idx + i
-            
-            messages = self._create_messages(query, batch_passages, batch_start_idx)
-            for attempt in range(max_retries):
-                try:
-                    response = self.client.chat.completions.create(
-                        model=self.model,
-                        messages=messages,
-                        temperature=0,
-                        max_tokens=150,
-                        timeout=30
-                    )
-                    all_rankings.append(response.choices[0].message.content.strip())
-                    break
-                except Exception as e:
-                    print(f"Attempt {attempt + 1} failed for batch {i//self.batch_size}: {str(e)}")
-                    if attempt == max_retries - 1:
-                        raise
-                    time.sleep(5)
-                    
-        # If only one batch, return its ranking
-        if len(all_rankings) == 1:
-            return all_rankings[0]
-        return " | ".join(all_rankings)
+        first_group = passages[:40]
+        second_group = passages[40:80]
+        third_group = passages[80:]
+        
+        first_ranks = self.get_ranking_for_group(query, first_group, 0)
+        print(f"First group top 10: {first_ranks[:10]}")
+        second_ranks = self.get_ranking_for_group(query, second_group, 40)
+        print(f"Second group top 10: {second_ranks[:10]}")
+        third_ranks = self.get_ranking_for_group(query, third_group, 80)
+        print(f"Third group top 10: {third_ranks[:10]}")
+        
+        top_30_indices = []
+        if first_ranks:
+            top_30_indices.extend(first_ranks[:10])
+        if second_ranks:
+            top_30_indices.extend(second_ranks[:10])
+        if third_ranks:
+            top_30_indices.extend(third_ranks[:10])
+        top_30_passages = [passages[i] for i in top_30_indices]
+        
+        final_local_ranks = self.get_ranking_for_group(query, top_30_passages, 0)
+        
+        final_indices = []
+        for rank in final_local_ranks:
+            if rank < len(top_30_indices):
+                final_indices.append(top_30_indices[rank])
+        
+        remaining_top = [idx for idx in top_30_indices if idx not in final_indices]
+        final_indices.extend(remaining_top)
+        
+        all_other_indices = [i for i in range(len(passages)) if i not in top_30_indices]
+        final_indices.extend(all_other_indices)
+        
+        ranking_str = " > ".join(f"[{r+1}]" for r in final_indices)
+        return ranking_str
 
 @dataclass
 class RankingResult:
@@ -132,16 +167,29 @@ class Evaluator:
             qrel = pytrec_eval.parse_qrel(f_qrel)
             run = pytrec_eval.parse_run(f_run)
         
-        evaluator = pytrec_eval.RelevanceEvaluator(qrel, {'ndcg_cut.1', 'ndcg_cut.5', 'ndcg_cut.10'})
+        evaluator = pytrec_eval.RelevanceEvaluator(
+            qrel, 
+            {'ndcg_cut.1', 'ndcg_cut.5', 'ndcg_cut.10', 'recip_rank', 'recall.5'}
+        )
         scores = evaluator.evaluate(run)
         
-        metrics = {'NDCG@1': 0.0, 'NDCG@5': 0.0, 'NDCG@10': 0.0}
+        metrics = {
+            'NDCG@1': 0.0, 
+            'NDCG@5': 0.0, 
+            'NDCG@10': 0.0,
+            'MRR': 0.0,
+            'Recall@5': 0.0
+        }
+        
         for query_scores in scores.values():
             metrics['NDCG@1'] += query_scores['ndcg_cut_1']
             metrics['NDCG@5'] += query_scores['ndcg_cut_5']
             metrics['NDCG@10'] += query_scores['ndcg_cut_10']
+            metrics['MRR'] += query_scores['recip_rank']
+            metrics['Recall@5'] += query_scores['recall_5']
         
-        return {k: round(v / len(scores), 4) for k, v in metrics.items()}
+        num_queries = len(scores)
+        return {k: round(v / num_queries, 4) for k, v in metrics.items()}
     
 def process_query(row: pd.Series, reranker: GPTReranker) -> Optional[RankingResult]:
     try:
@@ -170,11 +218,11 @@ def main():
         raise ValueError("OpenAI API key not found")
     
     df = pd.read_csv('./ranking/query_and_100_passages.csv')
-    df_sample = df.head(20)
+
     reranker = GPTReranker(api_key)
 
     results = []
-    for _, row in tqdm(df_sample.iterrows()):
+    for _, row in tqdm(df.iterrows()):
         if result := process_query(row, reranker):
             print(f"\nQuery: {result.query}")
             print(f"Correct index: {result.correct_idx}")
@@ -201,6 +249,6 @@ def main():
     os.unlink(qrels_file)
     os.unlink(run_file)
     results_df = pd.DataFrame([vars(r) for r in results])
-    results_df.to_csv('reranking_100_passages_test', index=False)
+    results_df.to_csv('reranking_100_passages_test.csv', index=False)
 
 main()

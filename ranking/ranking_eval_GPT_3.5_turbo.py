@@ -17,7 +17,7 @@ from concurrent.futures import ThreadPoolExecutor
 dotenv.load_dotenv()
 
 class GPTReranker:
-    def __init__(self, api_key: str, model: str = "gpt-3.5-turbo", window_size: int = 30, overlap: int = 10):
+    def __init__(self, api_key: str, model: str = "gpt-4o", window_size: int = 30, overlap: int = 10):
         if window_size <= overlap:
             raise ValueError("Window size must be greater than overlap")
         if overlap < 0:

@@ -16,7 +16,7 @@ from concurrent.futures import ThreadPoolExecutor
 from huggingface_hub import login
 from transformers import AutoModelForCausalLM, AutoTokenizer
 dotenv.load_dotenv()
-API_KEY = "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"
+API_KEY = ""
 login(token=API_KEY)
 model_name = "meta-llama/Llama-3.1-8B-Instruct"
 

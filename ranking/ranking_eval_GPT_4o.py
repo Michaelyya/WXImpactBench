@@ -157,7 +157,7 @@ def main():
     if not api_key:
         raise ValueError("OpenAI API key not found")
     
-    df = pd.read_csv('./ranking/query_and_100_passages.csv')
+    df = pd.read_csv('./ranking/candidate_pool_query_passage.csv')
     reranker = GPTReranker(api_key)
 
     results = []

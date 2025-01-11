@@ -44,7 +44,6 @@ class GPTReranker:
         self.overlap = overlap
         
     def _create_messages(self, query: str, passages: List[str], start_idx: int) -> str:
-        # Format the prompt in Llama's expected format
         prompt = f"""<s>[INST] You are an expert that ranks passages based on their relevance to a given query. 
 The most relevant passage should be ranked first. 
 Important: Do not just sort the passage numbers. Evaluate each passage's content for relevance.

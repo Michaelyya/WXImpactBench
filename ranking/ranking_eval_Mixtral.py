@@ -17,8 +17,7 @@ class GPTReranker:
             raise ValueError("Window size must be greater than overlap")
         if overlap < 0:
             raise ValueError("Overlap must be non-negative")
-            
-        # Initialize tokenizer and model
+        
         
         self.window_size = window_size
         self.overlap = overlap
@@ -62,7 +61,6 @@ class GPTReranker:
                 time.sleep(5)
 
     def _create_messages(self, query: str, passages: List[str], start_idx: int) -> str:
-        # Format the prompt in Llama's expected format
         prompt = f"""<s>[INST] You are an expert that ranks passages based on their relevance to a given query. 
             The most relevant passage should be ranked first. 
             Important: Do not just sort the passage numbers. Evaluate each passage's content for relevance.

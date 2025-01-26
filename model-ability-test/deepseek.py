@@ -53,6 +53,11 @@ def inference(input_text, model_name):
     Political: true/false
     
     if this is not weather-related event or you cannot find any impact, return all impact category as false
+    
+    example:
+    text: "Collision and loss of life. Calhoun, March 20. During a heavy wind the other night the oyster pungie Jasper and Industry collided at the mouth of the Wicomico River, Virginia. The Jasper sank. Boats were unable to reach her in the darkness, and in the morning the captain and two men were found lashed to the rigging, one frozen to death. Four others of the crew had dropped off during the night and were drowned. Business failure. New York, March 20. James Pendergast, ship broker, has assigned; liabilities, $75,000. Schuloss Heilbronner, woolens, have also assigned; liabilities, $50,000. Happenings abroad. St. Louis, March 20. Leading jewelers have been notified from New York that an organized band of daring thieves is about to raid Western cities. Claiming fortune. Des Moines, March 20. Reports from this section show that the apple orchards have been killed by the severe winter. One farmer lost two hundred trees."
+    output: "Infrastructural: true, Agricultural: false, Ecological: true, Financial: true, Health: true, Political: false"
+
     ***Rmember only output true or false***
     """
 
@@ -74,7 +79,7 @@ def inference(input_text, model_name):
 
 def process_csv(input_csv, output_dir, models):
     for model_name in models:
-        model_file_name = model_name.replace("-", "_") + "_oneshot_sort.csv"
+        model_file_name = model_name.replace("-", "_") + "_oneshot_short_last.csv"
         output_csv = os.path.join(output_dir, model_file_name)
         headers = [
             "ID", "Date", "Type", "Model_Type",
@@ -118,7 +123,7 @@ def process_csv(input_csv, output_dir, models):
                     print(f"Processed row {count} for model {model_name}")
 
 
-input_csv = "./datasets/context_data/long.csv"
+input_csv = "./datasets/context_data/short.csv"
 output_dir = "./datasets/context_data/"
 models = ["deepseek-chat"]
 

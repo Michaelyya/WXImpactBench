@@ -31,3 +31,7 @@ deepseek-chat,Precision,0.7418,0.6458,0.584,0.3596,0.6477,0.6234
 deepseek-chat,Recall,0.9405,0.5082,0.7449,0.5926,0.7125,0.8205
 deepseek-chat,F1,0.8294,0.5688,0.6547,0.4476,0.6786,0.7085
 deepseek-chat,Accuracy,0.8143,0.8657,0.78,0.7743,0.8457,0.7743
+mistralai/Mistral-Small-24B-Instruct-2501,Precision,0.7005,0.4624,0.5159,0.3457,0.581,0.5291
+mistralai/Mistral-Small-24B-Instruct-2501,Recall,0.9048,0.7049,0.6633,0.5185,0.7625,0.8547
+mistralai/Mistral-Small-24B-Instruct-2501,F1,0.7896,0.5584,0.5804,0.4148,0.6595,0.6536
+mistralai/Mistral-Small-24B-Instruct-2501,Accuracy,0.7686,0.8057,0.7314,0.7743,0.82,0.6971

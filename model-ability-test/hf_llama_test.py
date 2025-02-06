@@ -6,7 +6,7 @@ import time
 import json
 import csv
 import transformers
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 import torch
 API_KEY=""
 from huggingface_hub import login
@@ -14,10 +14,17 @@ login(token=API_KEY)
 model_name = "meta-llama/Llama-3.1-8B-Instruct"
 
 tokenizer = AutoTokenizer.from_pretrained(model_name)
+config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_compute_dtype=torch.float16, 
+    bnb_4bit_use_double_quant=True,
+    llm_int8_enable_fp32_cpu_offload=True 
+)
 model = AutoModelForCausalLM.from_pretrained(
     model_name,
-    torch_dtype=torch.float16, 
-    device_map="auto"     
+    cache_dir=slurm_tmpdir,
+    device_map={"": 0}, 
+    quantization_config=config  
 )
 model.gradient_checkpointing_enable()
 

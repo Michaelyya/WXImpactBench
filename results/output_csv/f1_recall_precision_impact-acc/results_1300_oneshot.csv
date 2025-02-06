@@ -35,3 +35,7 @@ mistralai/Mistral-Small-24B-Instruct-2501,Precision,0.7005,0.4624,0.5159,0.3457,
 mistralai/Mistral-Small-24B-Instruct-2501,Recall,0.9048,0.7049,0.6633,0.5185,0.7625,0.8547
 mistralai/Mistral-Small-24B-Instruct-2501,F1,0.7896,0.5584,0.5804,0.4148,0.6595,0.6536
 mistralai/Mistral-Small-24B-Instruct-2501,Accuracy,0.7686,0.8057,0.7314,0.7743,0.82,0.6971
+google/gemma-2-9b-it,Precision,0.6345,0.2891,0.3516,0.2342,0.4667,0.5127
+google/gemma-2-9b-it,Recall,0.9405,0.6066,0.9184,0.6852,0.7,0.8632
+google/gemma-2-9b-it,F1,0.7578,0.3915,0.5085,0.3491,0.56,0.6433
+google/gemma-2-9b-it,Accuracy,0.7114,0.6714,0.5029,0.6057,0.7486,0.68

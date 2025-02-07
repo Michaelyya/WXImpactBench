@@ -1,0 +1,7 @@
+Model_Type,Accuracy
+gpt-4o,0.3228
+meta-llama/Llama-3.1-8B-Instruct,0.1268
+gpt-4,0.2219
+Qwen/Qwen2.5-7B-Instruct,0.2738
+mistralai/Mixtral-8x7B-Instruct-v0.1,0.2507
+gpt-3.5-turbo,0.2161

@@ -1,0 +1,5 @@
+Model_Type,Metric,Infrastructural impact,Political impact,Financial impact,Ecological impact,Agricultural impact,Human health impact
+gemma-2-9b-1300,Precision,0.6286,0.3485,0.2613,0.2184,0.4667,0.5158
+gemma-2-9b-1300,Recall,0.88,0.5897,0.9062,0.9048,0.7241,0.9074
+gemma-2-9b-1300,F1,0.7333,0.4381,0.4056,0.3519,0.5676,0.6577
+gemma-2-9b-1300,Accuracy,0.68,0.6067,0.4333,0.5333,0.7867,0.66

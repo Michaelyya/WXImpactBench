@@ -1,0 +1,5 @@
+Model_Type,Metric,Infrastructural impact,Political impact,Financial impact,Ecological impact,Agricultural impact,Human health impact
+mixtral,Precision,0.8023,0.25,0.5044,0.4583,0.5893,0.5875
+mixtral,Recall,0.7419,0.3636,0.8636,0.3333,0.6471,0.746
+mixtral,F1,0.7709,0.2963,0.6369,0.386,0.6168,0.6573
+mixtral,Accuracy,0.795,0.81,0.675,0.825,0.795,0.755

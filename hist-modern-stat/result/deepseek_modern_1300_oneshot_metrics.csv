@@ -1,0 +1,5 @@
+Model_Type,Metric,Infrastructural impact,Political impact,Financial impact,Ecological impact,Agricultural impact,Human health impact
+deepseek,Precision,0.7442,0.5862,0.5897,0.4146,0.7083,0.6727
+deepseek,Recall,0.8889,0.4474,0.7419,0.8095,0.6071,0.7115
+deepseek,F1,0.8101,0.5075,0.6571,0.5484,0.6538,0.6916
+deepseek,Accuracy,0.7959,0.7755,0.8367,0.8095,0.8776,0.7755

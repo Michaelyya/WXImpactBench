@@ -1,0 +1,5 @@
+Model_Type,Metric,Infrastructural impact,Political impact,Financial impact,Ecological impact,Agricultural impact,Human health impact
+llama,Precision,0.7213,0.3117,0.2941,0.3265,0.4375,0.5472
+llama,Recall,0.6111,0.6316,0.8065,0.7619,0.5,0.5577
+llama,F1,0.6617,0.4174,0.431,0.4571,0.4667,0.5524
+llama,Accuracy,0.6939,0.5442,0.551,0.7415,0.7823,0.6803

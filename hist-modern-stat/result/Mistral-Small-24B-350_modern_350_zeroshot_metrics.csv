@@ -1,5 +1,0 @@
-Model_Type,Metric,Infrastructural impact,Political impact,Financial impact,Ecological impact,Agricultural impact,Human health impact
-Mistral-Small-24B-350,Precision,0.6569,0.375,0.463,0.3409,0.6452,0.5696
-Mistral-Small-24B-350,Recall,0.9306,0.4737,0.8065,0.7143,0.7143,0.8654
-Mistral-Small-24B-350,F1,0.7701,0.4186,0.5882,0.4615,0.678,0.687
-Mistral-Small-24B-350,Accuracy,0.7279,0.6599,0.7619,0.7619,0.8707,0.7211

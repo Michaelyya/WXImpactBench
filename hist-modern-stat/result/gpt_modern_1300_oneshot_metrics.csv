@@ -1,5 +1,5 @@
 Model_Type,Metric,Infrastructural impact,Political impact,Financial impact,Ecological impact,Agricultural impact,Human health impact
-gpt,Precision,0.6907,0.4906,0.4815,0.3878,0.697,0.7
-gpt,Recall,0.9306,0.6842,0.8387,0.9048,0.8214,0.8077
-gpt,F1,0.7929,0.5714,0.6118,0.5429,0.7541,0.75
-gpt,Accuracy,0.7619,0.7347,0.7755,0.7823,0.898,0.8095
+gpt,Precision,0.6931,0.4615,0.4746,0.3725,0.6923,0.6806
+gpt,Recall,0.9333,0.7692,0.875,0.9048,0.931,0.9074
+gpt,F1,0.7955,0.5769,0.6154,0.5278,0.7941,0.7778
+gpt,Accuracy,0.76,0.7067,0.7667,0.7733,0.9067,0.8133

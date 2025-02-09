@@ -1,7 +1,0 @@
-Model_Type,Accuracy
-Qwen/Qwen2.5-7B-Instruct,0.2565
-meta-llama/Llama-3.1-8B-Instruct,0.1556
-gpt-4,0.2046
-gpt-3.5-turbo,0.1239
-gpt-4o,0.3199
-mistralai/Mixtral-8x7B-Instruct-v0.1,0.1988

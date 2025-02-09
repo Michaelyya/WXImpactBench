@@ -1,5 +1,5 @@
-Model_Type,Metric,Infrastructural impact,Political impact,Financial impact,Ecological impact,Agricultural impact,Human health impact
-llama,Precision,0.7553,0.1731,0.4132,0.3548,0.4667,0.5217
-llama,Recall,0.7634,0.4091,0.7576,0.3333,0.6863,0.5714
-llama,F1,0.7594,0.2432,0.5348,0.3438,0.5556,0.5455
-llama,Accuracy,0.775,0.72,0.565,0.79,0.72,0.7
+Model_Type,Type,Version,Shot,Metric,Infrastructural impact,Political impact,Financial impact,Ecological impact,Agricultural impact,Human health impact
+llama,historical,350,oneshot,Precision,75.5319,17.3077,41.3223,35.4839,46.6667,52.1739
+llama,historical,350,oneshot,Recall,76.3441,40.9091,75.7576,33.3333,68.6275,57.1429
+llama,historical,350,oneshot,F1,75.9358,24.3243,53.4759,34.375,55.5556,54.5455
+llama,historical,350,oneshot,Accuracy,77.5,72.0,56.5,79.0,72.0,70.0

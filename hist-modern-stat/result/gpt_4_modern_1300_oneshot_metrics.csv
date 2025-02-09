@@ -1,5 +1,5 @@
-Model_Type,Metric,Infrastructural impact,Political impact,Financial impact,Ecological impact,Agricultural impact,Human health impact
-gpt_4,Precision,0.6292,0.3714,0.3214,0.3488,0.5758,0.5507
-gpt_4,Recall,0.7467,0.6667,0.8438,0.7143,0.6552,0.7037
-gpt_4,F1,0.6829,0.4771,0.4655,0.4688,0.6129,0.6179
-gpt_4,Accuracy,0.6533,0.62,0.5867,0.7733,0.84,0.6867
+Model_Type,Type,Version,Shot,Metric,Infrastructural impact,Political impact,Financial impact,Ecological impact,Agricultural impact,Human health impact
+gpt_4,modern,1300,oneshot,Precision,62.9213,37.1429,32.1429,34.8837,57.5758,55.0725
+gpt_4,modern,1300,oneshot,Recall,74.6667,66.6667,84.375,71.4286,65.5172,70.3704
+gpt_4,modern,1300,oneshot,F1,68.2927,47.7064,46.5517,46.875,61.2903,61.7886
+gpt_4,modern,1300,oneshot,Accuracy,65.3333,62.0,58.6667,77.3333,84.0,68.6667

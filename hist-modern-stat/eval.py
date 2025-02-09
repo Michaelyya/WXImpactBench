@@ -35,7 +35,7 @@ for root, _, files in os.walk(split_dir):
 # 正则匹配文件名中的信息，例如 "deepseek_historical_350_oneshot.csv"
 pattern = re.compile(r"(.+?)_(historical|modern)_(\d+)_(oneshot|zeroshot)\.csv")
 
-def evaluate_metrics(data, gold_data, model_name, category, output_file):
+def evaluate_metrics(data, gold_data, model_name, category, version, shot, output_file):
     """ 计算 Precision, Recall, F1, Accuracy 并保存 """
     data.columns = [x.capitalize() for x in data.columns]
 
@@ -59,7 +59,7 @@ def evaluate_metrics(data, gold_data, model_name, category, output_file):
         merged = grouped.join(gold_grouped, how='inner', lsuffix='_model', rsuffix='_gold')
 
         for metric_name in ["Precision", "Recall", "F1", "Accuracy"]:
-            metrics = {"Model_Type": model_name, "Metric": metric_name}
+            metrics = {"Model_Type": model_name, "Type": category, "Version": version, "Shot": shot, "Metric": metric_name}
             for col in impact_columns:
                 tp = ((merged[f"{col}_model"] == 1) & (merged[f"{col}_gold"] == 1)).sum()
                 tn = ((merged[f"{col}_model"] == 0) & (merged[f"{col}_gold"] == 0)).sum()
@@ -77,6 +77,7 @@ def evaluate_metrics(data, gold_data, model_name, category, output_file):
                 elif metric_name == "Accuracy":
                     value = (tp + tn) / (tp + tn + fp + fn) if (tp + tn + fp + fn) > 0 else 0
 
+                value *= 100
                 metrics[col] = round(value, 4)
             results.append(metrics)
 
@@ -105,6 +106,6 @@ for file_path in csv_files:
     output_file = os.path.join(output_dir, f"{model_full_name}_metrics.csv")
 
     # 计算评估指标
-    evaluate_metrics(data, gold_data, model_name, category, output_file)
+    evaluate_metrics(data, gold_data, model_name, category, version, shot, output_file)
 
 print("所有评估已完成，结果存放在 ./result 目录下！")

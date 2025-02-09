@@ -1,5 +1,5 @@
-Model_Type,Metric,Infrastructural impact,Political impact,Financial impact,Ecological impact,Agricultural impact,Human health impact
-gemma_2-9b,Precision,0.6429,0.1702,0.4286,0.2687,0.4154,0.5253
-gemma_2-9b,Recall,0.9783,0.381,0.9231,0.5455,0.5294,0.8387
-gemma_2-9b,F1,0.7759,0.2353,0.5854,0.36,0.4655,0.646
-gemma_2-9b,Accuracy,0.7387,0.7387,0.5729,0.6784,0.6884,0.7136
+Model_Type,Type,Version,Shot,Metric,Infrastructural impact,Political impact,Financial impact,Ecological impact,Agricultural impact,Human health impact
+gemma_2-9b,historical,350,oneshot,Precision,64.2857,17.0213,42.8571,26.8657,41.5385,52.5253
+gemma_2-9b,historical,350,oneshot,Recall,97.8261,38.0952,92.3077,54.5455,52.9412,83.871
+gemma_2-9b,historical,350,oneshot,F1,77.5862,23.5294,58.5366,36.0,46.5517,64.5963
+gemma_2-9b,historical,350,oneshot,Accuracy,73.8693,73.8693,57.2864,67.8392,68.8442,71.3568

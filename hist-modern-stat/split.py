@@ -41,7 +41,7 @@ for file_path in csv_files:
     modern_df = df[df["Type"] == "modern"]
 
     # 处理 "Model_Type"，获取模型名（去掉文件名前缀）
-    base_model_name = os.path.basename(file_path).split("_")[0]  # 例如 "deepseek", "gpt"
+    base_model_name = "_".join(os.path.basename(file_path).split("_")[:-2])  # 去掉最后两个部分
 
     # 保存拆分后的数据
     if not historical_df.empty:

@@ -1,5 +1,0 @@
-Model_Type,Metric,Infrastructural impact,Political impact,Financial impact,Ecological impact,Agricultural impact,Human health impact
-Qwen,Precision,0.6237,0.2658,0.2676,0.2027,0.2963,0.3824
-Qwen,Recall,0.7733,0.5385,0.5938,0.7143,0.5517,0.4815
-Qwen,F1,0.6905,0.3559,0.3689,0.3158,0.3855,0.4262
-Qwen,Accuracy,0.6533,0.4933,0.5667,0.5667,0.66,0.5333

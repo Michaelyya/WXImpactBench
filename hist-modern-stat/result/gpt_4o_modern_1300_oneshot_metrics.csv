@@ -1,0 +1,5 @@
+Model_Type,Metric,Infrastructural impact,Political impact,Financial impact,Ecological impact,Agricultural impact,Human health impact
+gpt_4o,Precision,0.6931,0.4615,0.4746,0.3725,0.6923,0.6806
+gpt_4o,Recall,0.9333,0.7692,0.875,0.9048,0.931,0.9074
+gpt_4o,F1,0.7955,0.5769,0.6154,0.5278,0.7941,0.7778
+gpt_4o,Accuracy,0.76,0.7067,0.7667,0.7733,0.9067,0.8133

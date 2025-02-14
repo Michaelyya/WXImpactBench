@@ -1,5 +1,0 @@
-Model_Type,Type,Version,Shot,Metric,Infrastructural impact,Political impact,Financial impact,Ecological impact,Agricultural impact,Human health impact
-mixtral,historical,350,oneshot,Precision,70.5263,12.5,44.5946,17.9487,44.6809,53.3333
-mixtral,historical,350,oneshot,Recall,72.043,9.0909,50.0,21.2121,41.1765,50.7937
-mixtral,historical,350,oneshot,F1,71.2766,10.5263,47.1429,19.4444,42.8571,52.0325
-mixtral,historical,350,oneshot,Accuracy,73.0,83.0,63.0,71.0,72.0,70.5

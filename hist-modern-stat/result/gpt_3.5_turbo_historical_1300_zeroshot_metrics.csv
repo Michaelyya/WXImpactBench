@@ -1,5 +1,0 @@
-Model_Type,Type,Version,Shot,Metric,Infrastructural impact,Political impact,Financial impact,Ecological impact,Agricultural impact,Human health impact
-gpt_3.5_turbo,historical,1300,zeroshot,Precision,75.8621,41.9355,49.3151,32.5581,54.6875,56.7164
-gpt_3.5_turbo,historical,1300,zeroshot,Recall,94.6237,59.0909,54.5455,42.4242,68.6275,60.3175
-gpt_3.5_turbo,historical,1300,zeroshot,F1,84.2105,49.0566,51.7986,36.8421,60.8696,58.4615
-gpt_3.5_turbo,historical,1300,zeroshot,Accuracy,83.5,86.5,66.5,76.0,77.5,73.0

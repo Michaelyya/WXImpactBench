@@ -1,5 +1,0 @@
-Model_Type,Type,Version,Shot,Metric,Infrastructural impact,Political impact,Financial impact,Ecological impact,Agricultural impact,Human health impact
-gpt_4,modern,350,oneshot,Precision,56.962,33.3333,32.0,40.7407,54.5455,51.9231
-gpt_4,modern,350,oneshot,Recall,62.5,47.3684,77.4194,52.381,64.2857,51.9231
-gpt_4,modern,350,oneshot,F1,59.6026,39.1304,45.283,45.8333,59.0164,51.9231
-gpt_4,modern,350,oneshot,Accuracy,58.5034,61.9048,60.5442,82.3129,82.9932,65.9864

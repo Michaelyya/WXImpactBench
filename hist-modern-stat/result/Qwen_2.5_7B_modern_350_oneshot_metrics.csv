@@ -1,5 +1,0 @@
-Model_Type,Type,Version,Shot,Metric,Infrastructural impact,Political impact,Financial impact,Ecological impact,Agricultural impact,Human health impact
-Qwen_2.5_7B,modern,350,oneshot,Precision,75.4386,55.5556,41.1765,30.7692,71.4286,61.5385
-Qwen_2.5_7B,modern,350,oneshot,Recall,59.7222,26.3158,45.1613,57.1429,35.7143,30.7692
-Qwen_2.5_7B,modern,350,oneshot,F1,66.6667,35.7143,43.0769,40.0,47.619,41.0256
-Qwen_2.5_7B,modern,350,oneshot,Accuracy,70.7483,75.5102,74.8299,75.5102,85.034,68.7075

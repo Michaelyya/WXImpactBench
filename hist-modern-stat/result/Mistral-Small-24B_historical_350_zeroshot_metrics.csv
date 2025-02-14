@@ -1,5 +1,0 @@
-Model_Type,Type,Version,Shot,Metric,Infrastructural impact,Political impact,Financial impact,Ecological impact,Agricultural impact,Human health impact
-Mistral-Small-24B,historical,350,zeroshot,Precision,69.2308,29.2683,47.4747,24.0,56.1644,49.1228
-Mistral-Small-24B,historical,350,zeroshot,Recall,97.8261,54.5455,71.2121,18.1818,80.3922,88.8889
-Mistral-Small-24B,historical,350,zeroshot,F1,81.0811,38.0952,56.9697,20.6897,66.129,63.2768
-Mistral-Small-24B,historical,350,zeroshot,Accuracy,78.8945,80.5,64.5,77.0,79.0,67.5

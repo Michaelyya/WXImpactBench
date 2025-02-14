@@ -1,5 +1,0 @@
-Model_Type,Type,Version,Shot,Metric,Infrastructural impact,Political impact,Financial impact,Ecological impact,Agricultural impact,Human health impact
-deepseek_chat,modern,350,oneshot,Precision,74.4186,58.6207,58.9744,41.4634,70.8333,67.2727
-deepseek_chat,modern,350,oneshot,Recall,88.8889,44.7368,74.1935,80.9524,60.7143,71.1538
-deepseek_chat,modern,350,oneshot,F1,81.0127,50.7463,65.7143,54.8387,65.3846,69.1589
-deepseek_chat,modern,350,oneshot,Accuracy,79.5918,77.551,83.6735,80.9524,87.7551,77.551

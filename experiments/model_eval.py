@@ -43,7 +43,7 @@ def extract_answer(full_text):
         r"Agricultural|"
         r"Ecological|"
         r"Financial|"
-        r"Health|"
+        r"Human Health|"
         r"Political):\s*(true|false)"
     )
     answers = re.findall(pattern, full_text)
@@ -73,7 +73,7 @@ def inference(input_text, prompt=None, typ="hf"):
         Agricultural: true/false
         Ecological: true/false
         Financial: true/false
-        Health: true/false
+        Human Health: true/false
         Political: true/false
     """
     prompt = prompt or default_prompt
@@ -134,7 +134,7 @@ def process_csv(input_csv, output_csv, prompt=None,typ="hf"):
                     "Agricultural impact": extracted_response.get("Agricultural", ""),
                     "Ecological impact": extracted_response.get("Ecological", ""),
                     "Financial impact": extracted_response.get("Financial", ""),
-                    "Human health impact": extracted_response.get("Health", ""),
+                    "Human Health impact": extracted_response.get("Human Health", ""),
                     "Political impact": extracted_response.get("Political", ""),
                 }
 

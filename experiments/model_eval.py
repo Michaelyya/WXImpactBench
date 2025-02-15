@@ -19,7 +19,7 @@ client = OpenAI(
 API_KEY=""
 from huggingface_hub import login
 login(token=API_KEY)
-huggingface_models=["meta-llama/Meta-Llama-3-8B-Instruct","Qwen/Qwen2.5-7B-Instruct","mistralai/Mixtral-8x7B-Instruct-v0.1"]
+huggingface_models=["meta-llama/Meta-Llama-3-8B-Instruct","Qwen/Qwen2.5-7B-Instruct","mistralai/Mixtral-8x7B-Instruct-v0.1","Qwen/Qwen2.5-14B-Instruct","Qwen/Qwen2.5-7B-Instruct","google/gemma-2-9b-it","mistralai/Mistral-Small-24B-Instruct-2501"]
 model_name = "meta-llama/Llama-3.1-8B-Instruct"
 
 tokenizer = AutoTokenizer.from_pretrained(model_name)
@@ -55,13 +55,15 @@ def inference(input_text, prompt=None, typ="hf"):
     default_prompt = """
         Given the following historical newspaper text:
         "{input_text}"
-        Provide a binary classification (respond ONLY with 'true' or 'false') for each impact category based on explicit mentions in the text. Follow these specific guidelines:
+        
+        Analyze the text and provide a binary classification (respond ONLY with 'true' or 'false') for each impact category based on explicit mentions in the text. Follow these specific guidelines:
         1. ***Infrastructural Impact***: Classify as 'true' if the text mentions any damage or disruption to physical infrastructure and essential services. This includes structural damage to buildings, roads, or bridges; any disruptions to transportation systems such as railway cancellations or road closures; interruptions to public utilities including power and water supply; any failures in communication networks; or damage to industrial facilities. Consider only explicit mentions of physical damage or service disruptions in your classification.
         2. ***Agricultural Impact***: Classify as 'true' if the text mentions any weather-related effects on farming and livestock management operations. This includes yield variations in crops and animal products; direct damage to crops, timber resources, or livestock; modifications to agricultural practices or schedules; disruptions to food production or supply chains; impacts on farming equipment and resources; or effects on agricultural inputs including soil conditions, water availability for farming, and essential materials such as seedlings, fertilizers, or animal feed.
         3. ***Ecological Impact***: Classify as 'true' if the text mentions any effects on natural environments and ecosystems. This includes alterations to local environments and biodiversity; impacts on wildlife populations and behavior patterns; effects on non-agricultural plant life and vegetation; modifications to natural habitats including water bodies, forests, and wetlands; changes in hydrological systems such as river levels and lake conditions; or impacts on urban plant life.
         4. ***Financial Impact***: Classify as 'true' if the text explicitly mentions economic consequences of weather events. This includes direct monetary losses; business disruptions or closures requiring financial intervention; market price fluctuations or demand changes for specific goods; impacts on tourism and local economic activities; or insurance claims or economic relief measures. Focus only on explicit mentions of financial losses or fluctuations.
         5. ***Human Health Impact***: Classify as 'true' if the text mentions physical or mental health effects of weather events on populations. This includes direct injuries or fatalities (including cases where zero or more casualties are explicitly mentioned); elevated risks of weather-related or secondary illnesses; mental health consequences such as stress or anxiety; impacts on healthcare service accessibility; or long-term health implications.
         6. ***Political Impact***: Classify as 'true' if the text mentions governmental and policy responses to weather events. This includes government decision-making and policy modifications in response to events; changes in public opinion or political discourse; effects on electoral processes or outcomes; international relations and aid responses; or debates surrounding disaster preparedness and response capabilities.
+        
         Note: 
         - Return 'false' for any impact category that is either not present in the text or not related to weather events
         - Base classifications on explicit mentions in the text
@@ -144,7 +146,7 @@ def process_csv(input_csv, output_csv, prompt=None,typ="hf"):
                 count += 1
 
 
-input_csv = "model-ability-test/Final350.csv" 
-out_csv = "model-ability-test/dataset_ver1_350_output.csv" 
+input_csv = "your-input.csv" 
+out_csv = "your-output.csv" 
 process_csv(input_csv,out_csv)
 print(f"Results written to {out_csv}")

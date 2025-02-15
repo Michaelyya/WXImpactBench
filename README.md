@@ -2,7 +2,6 @@
 
 - [Table of Contents](#table_of_contents)
 - [Data](#data)
-- [Current Benchmark Result](#result)
 - [How to Use](#usage)
   - [Task1: Multi-Label Classification](#task_1)
   - [Task2: Ranking-Based Question-Answering](#autatic_metrics)
@@ -37,7 +36,6 @@ ID,Date,Time_Period,Weather_Type,Article,Infrastructural Impact,Political Impact
 
 
 
-## Current Benchmark Result <a name="result"></a>
 
 
 

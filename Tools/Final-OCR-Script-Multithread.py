@@ -64,21 +64,19 @@ def split_text_to_chunks(text):
     num_words = len(words)
     n = math.ceil(num_words/TOKEN_LIMIT)
 
-    # 如果单词数量小于或等于需要的 chunk 数，直接返回每个单词作为一个 chunk
     if n >= num_words:
         return [' '.join([word]) for word in words]
-    # 计算每个 chunk 的大小（最后一块可能会稍大）
+
     chunk_size = math.ceil(num_words / n)
-    # 使用列表推导式按大小拆分为 n 个 chunk
+
     chunks = [' '.join(words[i:i + chunk_size]) for i in range(0, num_words, chunk_size)]
     return chunks
 
 
 def process_row(row):
-    """处理每一行的函数，用于线程池调度"""
     date, text = row
     if text.strip() == "[]" or not text.strip() or date == "Date":
-        return None  # 跳过无效的行
+        return None  # Skip rows without any Text
 
     text = text.strip("[]\"' ")
     text_chunks = split_text_to_chunks(text)
@@ -87,17 +85,17 @@ def process_row(row):
         processed_chunks = []
         print(len(text_chunks))
 
-        # 按顺序处理该行的所有 chunks
+        # Process all chunks it has
         for chunk in text_chunks:
             fixed_text = call_chatgpt_api(chunk)
             processed_chunks.append(fixed_text)
 
         final_text = ' '.join(processed_chunks)
-        return [date, final_text[:1000000]]  # 返回结果供写入
+        return [date, final_text[:1000000]]  # Write back the results
 
     except RuntimeError as e:
         print(f"ERROR OCCURRED Date {date}, text starts with: {text[:50]}")
-        return None  # 发生错误则返回 None
+        return None
 
 
 def process_file(input_file, output_file):
@@ -116,7 +114,7 @@ def process_file(input_file, output_file):
 
                 for future in as_completed(futures):
                     result = future.result()
-                    if result:  # 如果有处理结果，则加锁写入文件
+                    if result:  # If there is a result, add lock before the wrrite to synch
                         with write_lock:
                             print(result)
                             writer.writerow(result)

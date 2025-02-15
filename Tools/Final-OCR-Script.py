@@ -47,14 +47,13 @@ def call_chatgpt_api(text_chunk):
 def split_text_to_chunks(text):
     words = text.split()
     num_words = len(words)
-    # 如果总词数小于 TOKEN_LIMIT，直接返回一个 chunk
+    # If the total word count is smaller than TOKEN_LIMIT, return this chunk
     if num_words <= TOKEN_LIMIT:
         return [text]
 
-    # 计算需要分成的 chunk 数量
-    num_chunks = math.ceil(num_words / TOKEN_LIMIT)  # 例如 2.9 倍就分成 3 段
+    # Calculate how many chunks it needs to be splitted into
+    num_chunks = math.ceil(num_words / TOKEN_LIMIT)  # Floor it. E.g. 2.9 will be round to 3
     print(f"Split into {num_chunks} chunks")
-    # 计算每个 chunk 的近似大小
     chunk_size = num_words // num_chunks
 
     chunks = []
@@ -64,18 +63,18 @@ def split_text_to_chunks(text):
     for i, word in enumerate(words):
         current_chunk.append(word)
         words_in_chunk += 1
-        # 如果到达了预设的chunk大小或者遇到了句号(".")
+        # If reached the chunk size or period (".")
         if words_in_chunk >= chunk_size and (word.endswith(".") or i == len(words) - 1):
             num_words -= words_in_chunk
             chunks.append(' '.join(current_chunk))
             current_chunk = []
             words_in_chunk = 0
-            # 如果剩余的单词数少于 TOKEN_LIMIT，直接将剩余单词作为最后一个 chunk 添加
+            # If the rest words are less than TOKEN_LIMIT，add the remaining words as the last chunk
             if num_words < TOKEN_LIMIT:
                 chunks.append(' '.join(words[i + 1:]))
                 break
 
-    # 如果最后一个 chunk 还有剩余单词
+    # If the last chunk has any remaining texts
     if current_chunk:
         chunks.append(' '.join(current_chunk))
     return chunks

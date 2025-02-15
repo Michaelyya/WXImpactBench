@@ -2,3 +2,4 @@ myenv/
 venv/
 __pycache__/
 *.csv/
+.env

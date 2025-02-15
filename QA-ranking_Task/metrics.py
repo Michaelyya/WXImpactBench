@@ -106,7 +106,7 @@ def load_results(filename: str) -> List[RankingResult]:
     return results
 
 def main():
-    loaded_results = load_results('./ranking/Mistral-7B-Instruct-v0.2_ranking_results.json')
+    loaded_results = load_results('./output.json') # Change here when you have your output from QA ranking json
     qrels_file, run_file = Evaluator.write_trec_files(loaded_results)
     
     print("\nQRELS file contents:")
@@ -126,6 +126,6 @@ def main():
     os.unlink(qrels_file)
     os.unlink(run_file)
     results_df = pd.DataFrame([vars(r) for r in loaded_results])
-    results_df.to_csv('reranking_100_passages_mixtra_7B.csv', index=False)
-
+    results_df.to_csv('final ranking results.csv', index=False) # Change here to save your final results
+    
 main()

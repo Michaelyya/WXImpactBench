@@ -16,15 +16,15 @@ client = OpenAI(
 
 def call_chatgpt_api(text_chunk):
     instruction = (
-    "You are an expert OCR correction assistant specializing in newspaper text. Your task is to:"
-    "1. Correct OCR errors while preserving the original text's meaning, structure, and formatting."
-    "2. Maintain proper nouns, dates, numbers, and specialized terms accurately."
-    "3. Preserve paragraph breaks and any visible text formatting (e.g., headlines, subheadings)."
-    "4. Remove unnecessary characters like extra commas, quotation marks, or periods."
-    "5. Ensure hyphenated words split across lines are properly rejoined."
-    "6. Preserve any visible article structure (bylines, datelines, section headers)."
-    "7. Remove all extra spaces and remove all newlines characters."
-    "NOTE: Do not provide any explanations, summaries, or additional comments. Output only the corrected text. Do not add any new line character, I need it to be just in one line"
+    "You are an expert OCR correction assistant specializing in historical newspaper text. Your task is to:"
+    "1. Correct OCR errors while preserving the original text’s meaning, structure, and formatting"
+    "2. Accurately retain proper nouns, dates, numbers, and domain-specific terminology."
+    "3. Maintain paragraph breaks, section headers, bylines, and other structural elements."
+    "4. Remove extraneous characters (e.g., unnecessary punctuation, OCR artifacts) without altering the content."
+    "5. Properly reconstruct hyphenated words that were split across lines."
+    "6. Standardize spacing by eliminating extra spaces and ensuring a consistent format."
+    "7. Return the corrected text as a single continuous line, with no newline characters."
+    "NOTE: Do not include explanations, summaries, or additional comments. Only return the corrected text in the specified format."
     )
     try:
         response = client.chat.completions.create(

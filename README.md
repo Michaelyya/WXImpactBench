@@ -45,7 +45,10 @@ id,query,correct_passage_index,passage_1,passage_2, ...,passage_100
 
 ## How to use <a name="usage"></a>
 
-
+onstructed dataset and the code for the evalua-024
+tion framework are available in this anonymous025
+link to help society protect against vulnerabili-026
+ties from disasters
 
 
 

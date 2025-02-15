@@ -10,7 +10,7 @@
 
 ## Data <a name="data"></a>
 The data is obtained through collaboration with a proprietary archive institution and covers two temporal periods.
-For Task 1, we share LongCTX in [datasets/LongCTX_Dataset(350).csv](./datasets/LongCTX_Dataset(350).csv) and MixedCTX data in [datasets/MixedCTX_Dataset(1386).csv](./datasets/MixedCTX_Dataset(1386).csv)
+For Task 1, we share LongCTX data in [datasets/LongCTX_Dataset(350).csv](./datasets/LongCTX_Dataset(350).csv) and MixedCTX data in [datasets/MixedCTX_Dataset(1386).csv](./datasets/MixedCTX_Dataset(1386).csv)
 We also share the annotation result of each annotator in .
 
 For Task 2, we share ...

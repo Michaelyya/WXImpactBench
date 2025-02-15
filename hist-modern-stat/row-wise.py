@@ -1,7 +1,6 @@
 import os
 import pandas as pd
 
-# =========== 全局配置 ===========
 impact_columns = [
     "Infrastructural Impact",
     "Political Impact",
@@ -12,17 +11,16 @@ impact_columns = [
 ]
 groupby = ['Date', 'Type', 'ID']
 
-# 350 和 1300 的 ground truth 对应文件
+# Ground truth files for 350 and 1300 datasets
 gold_data_files = {
     "350": "./final_query_annotated_350.csv",
     "1300": "./final_query_annotated_1300.csv"
 }
 
-# =========== 解析文件名的函数 ===========
 def parse_filename(filename):
     """
-    从文件名解析出：
-      - model_name (模型名称)
+    Extracts:
+      - model_name (model identifier)
       - hist_mod ("historical" / "modern")
       - shot_count ("350" / "1300")
       - shot_type ("oneshot" / "zeroshot")
@@ -30,20 +28,19 @@ def parse_filename(filename):
     name, _ = os.path.splitext(filename)
     parts = name.split("_")
 
-    shot_type = parts[-1]    # oneshot / zeroshot
-    shot_count = parts[-2]   # 350 / 1300
-    hist_mod = parts[-3]     # historical / modern
-    model_name = "_".join(parts[:-3])  # 其余部分合并当模型名
+    shot_type = parts[-1]    
+    shot_count = parts[-2]   
+    hist_mod = parts[-3]     
+    model_name = "_".join(parts[:-3])  
 
     return model_name, hist_mod, shot_count, shot_type
 
 
-# =========== 评估 Accuracy 的函数 ===========
 def evaluate_accuracy(data, gold_data, output_file,
                       model_label, hist_mod_label, shot_count_label, shot_type_label):
     """
-    - 计算 Accuracy，并附加 `model_label`, `hist_mod_label`, `shot_count_label`, `shot_type_label`
-    - 确保 `gold_data` 里的 `impact_columns` 与 `data` 对齐
+    Computes accuracy and attaches metadata.
+    Ensures `impact_columns` are aligned between `data` and `gold_data`.
     """
     data.columns = [x.capitalize() for x in data.columns]
     if 'Health impact' in data.columns:
@@ -77,7 +74,7 @@ def evaluate_accuracy(data, gold_data, output_file,
         })
 
     df_result = pd.DataFrame(results)
-    print("Accuracy结果:\n", df_result)
+    print("Accuracy results:\n", df_result)
 
     if not os.path.isfile(output_file):
         df_result.to_csv(output_file, index=False)
@@ -85,7 +82,6 @@ def evaluate_accuracy(data, gold_data, output_file,
         df_result.to_csv(output_file, mode='a', header=False, index=False)
 
 
-# =========== 遍历 ./split 目录下所有 CSV 文件 ===========
 def main():
     root_dir = "./split"
     output_dir = "./row-wise-result"
@@ -96,27 +92,27 @@ def main():
             if file.endswith(".csv"):
                 model_name, hist_mod, shot_count, shot_type = parse_filename(file)
 
-                # 选择正确的 ground truth 数据
+                # Select the corresponding ground truth dataset
                 gold_data_file = gold_data_files.get(shot_count, None)
                 if not gold_data_file:
-                    print(f"未找到匹配的 gold_data 文件: {file}")
+                    print(f"No matching gold_data file found: {file}")
                     continue
 
                 gold_data = pd.read_csv(gold_data_file)
-                print(f"检查 {gold_data_file} 的列名:", gold_data.columns.tolist())  # 打印列名
+                print(f"Checking columns in {gold_data_file}:", gold_data.columns.tolist())
 
                 file_path = os.path.join(root, file)
-                print(f"正在处理: {file_path} (使用 {gold_data_file} 作为 gold data)")
+                print(f"Processing: {file_path} (using {gold_data_file} as gold data)")
 
                 data = pd.read_csv(file_path)
 
-                # 生成输出文件名
+                # Output filename
                 output_file_accuracy = os.path.join(
                     output_dir,
                     f"{model_name}_{hist_mod}_{shot_count}_{shot_type}_row-wise_accuracy.csv"
                 )
 
-                # 计算 Accuracy
+                # Compute Accuracy
                 evaluate_accuracy(
                     data=data,
                     gold_data=gold_data,

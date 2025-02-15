@@ -59,7 +59,6 @@ def call_chatgpt_api(text_chunk):
 
 
 def split_text_to_chunks(text):
-    """将文本直接拆分为 n 份的函数"""
     words = text.split()
     num_words = len(words)
     n = math.ceil(num_words/TOKEN_LIMIT)

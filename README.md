@@ -10,7 +10,7 @@
 ## Data <a name="data"></a>
 The data is obtained through collaboration with a proprietary archive institution and covers two temporal periods.
 ### Multi-Label Classification
-We provide the LongCTX dataset in [datasets/LongCTX_Dataset(350).csv](./datasets/LongCTX_Dataset(350).csv) and the MixedCTX data in [datasets/MixedCTX_Dataset(1386).csv](./datasets/MixedCTX_Dataset(1386).csv)
+We provide the LongCTX dataset in [datasets/LongCTX_Dataset(350).csv](./datasets/LongCTX_Dataset(350).csv) and the MixedCTX data in [datasets/MixedCTX_Dataset(1386).csv](./datasets/MixedCTX_Dataset(1386).csv).
 
 These datasets contain labeled historical records of disruptive weather events and their societal impacts. Each entry includes temporal information, weather type, article text, and human-annotated binary labels for six distinct impact categories, serving as ground truth.
 
@@ -44,7 +44,7 @@ id,query,correct_passage_index,passage_1,passage_2, ...,passage_100
 ```
 - "ID": Unique identifier for each entry.
 
-- "Query": Pseudo question generated for question answering
+- "Query": Pseudo question generated for question answering.
 
 - "Correct_passage_index": the index number of the ground-truth passage in the 100 passages candidate pool.
 
@@ -55,17 +55,24 @@ Our code repo provides two tasks to evaluate LLMs on disruptive weather impacts 
 
 ## Multi-Label Classification <a name="task_1"></a>
 
-multi-label classification aims to test the ability of LLMs to distinguish the disruptive weather impact for each given article.
+Multi-label classification aims to test the ability of LLMs to distinguish the disruptive weather impact for each given article.
 
-To run the task:
-1. cd `./Multi-label_Task`
+To run this task:
+1. cd `./Multi-label_Task`.
 2. run `pip install -r requirements.txt` to install the required packages.
 3. change `model_name` for your testing model.
 4. change `your-input.csv` (options are LongCTX and MixedCTX, see [Data](#data)), and change `your-output.csv` to save the output.
-6. run `model_eval.py`
+6. run `model_eval.py`.
 
 ## Question-Answering Ranking <a name="task_2"></a>
 
+Question-answering requires the LLMs to reply to the given question based on their parametric knowledge. We formulate the ranking-based QA task by prompting the models to identify the likelihood of each article containing the correct answer from a candidate pool.
 
-
+To run this task:
+1. cd `./QA-ranking_Task`.
+2. run `pip install -r requirements.txt` to install the required packages.
+3. change `model_name` for your testing model.
+4. run `model_eval.py`.
+5. for data evaluation, change `your-output.json` in `metrics.py` to your saved result from `model_eval.py`.
+6. run `metrics.py` to get metrics evaluation results.
 

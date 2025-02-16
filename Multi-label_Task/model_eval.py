@@ -20,7 +20,7 @@ API_KEY=""
 from huggingface_hub import login
 login(token=API_KEY)
 huggingface_models=["meta-llama/Meta-Llama-3-8B-Instruct","Qwen/Qwen2.5-7B-Instruct","mistralai/Mixtral-8x7B-Instruct-v0.1","Qwen/Qwen2.5-14B-Instruct","Qwen/Qwen2.5-7B-Instruct","google/gemma-2-9b-it","mistralai/Mistral-Small-24B-Instruct-2501"]
-model_name = "meta-llama/Llama-3.1-8B-Instruct"
+model_name = "model_name" #Change here for testing your model
 
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 config = BitsAndBytesConfig(
@@ -146,7 +146,7 @@ def process_csv(input_csv, output_csv, prompt=None,typ="hf"):
                 count += 1
 
 
-input_csv = "your-input.csv" 
-out_csv = "your-output.csv" 
+input_csv = "your-input.csv" # Change here for your input file name
+out_csv = "your-output.csv" # Change here for your output file name
 process_csv(input_csv,out_csv)
 print(f"Results written to {out_csv}")

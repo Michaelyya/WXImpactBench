@@ -7,7 +7,7 @@
   - [Task2: Ranking-Based Question-Answering](#task_2)
 - [Citation](#citation)
 
-## Data <a name="data"></a>
+## Data <a name="data"></a> 🗂️
 The data is obtained through collaboration with a proprietary archive institution and covers two temporal periods.
 ### Multi-Label Classification
 We provide the LongCTX dataset in [datasets/LongCTX_Dataset(350).csv](./datasets/LongCTX_Dataset(350).csv) and the MixedCTX data in [datasets/MixedCTX_Dataset(1386).csv](./datasets/MixedCTX_Dataset(1386).csv).

@@ -51,30 +51,30 @@ id,query,correct_passage_index,passage_1,passage_2, ...,passage_100
 - "Passage columns": Candidate pool [1 ground-truth + 99 noise columns] 
 
 ## How to use <a name="usage"></a>
-Our code repo provides two tasks to evaluate LLMs on disruptive weather impacts understanding.
+Our code repository provides two tasks to evaluate large language models (LLMs) on understanding the impacts of disruptive weather.
 
 ## Multi-Label Classification <a name="task_1"></a> 🔍
 
-Multi-label classification aims to test the ability of LLMs to distinguish the disruptive weather impact for each given article.
+The multi-label classification task assesses an LLM’s ability to identify disruptive weather impacts in given articles.
 
 To run this task:
-1. cd `./Multi-label_Task`.
+1. navigate to the task directory `./Multi-label_Task`.
 2. run `pip install -r requirements.txt` to install the required packages.
-3. change `model_name` for your testing model.
-4. change `your-input.csv` (options are LongCTX and MixedCTX, see [Data](#data)), and change `your-output.csv` to save the output.
-6. run `model_eval.py`.
+3. set `model_name` to your desired model.
+4. update `your-input.csv` (options are LongCTX and MixedCTX, see [Data](#data)), and specify  `your-output.csv` for saving results.
+6. run the evaluation script: `model_eval.py`.
 
 ## Question-Answering Ranking <a name="task_2"></a> 🥇
 
-Question-answering requires the LLMs to reply to the given question based on their parametric knowledge. We formulate the ranking-based QA task by prompting the models to identify the likelihood of each article containing the correct answer from a candidate pool.
+The question-answering ranking task evaluates an LLM’s ability to determine the likelihood that a given article contains the correct answer based on its parametric knowledge.
 
 To run this task:
-1. cd `./QA-ranking_Task`.
+1. navigate to the task directory `./QA-ranking_Task`.
 2. run `pip install -r requirements.txt` to install the required packages.
-3. change `model_name` for your testing model.
+3. set `model_name` to your desired model.
 4. run `model_eval.py`.
-5. for data evaluation, change `your-output.json` in `metrics.py` to your saved result from `model_eval.py`.
-6. run `metrics.py` to get metrics evaluation results.
+5. for data evaluation, change `your-output.json` in `metrics.py` to the saved result from `model_eval.py`.
+6. run the metrics evaluation script `metrics.py`.
 
 ## Citation <a name="citation"></a>
 Please cite:

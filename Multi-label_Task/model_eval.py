@@ -31,7 +31,7 @@ config = BitsAndBytesConfig(
 )
 model = AutoModelForCausalLM.from_pretrained(
     model_name,
-    cache_dir=slurm_tmpdir,
+    cache_dir=YOUR_CACHE_DIR,
     device_map={"": 0}, 
     quantization_config=config  
 )
@@ -47,7 +47,6 @@ def extract_answer(full_text):
         r"Political):\s*(true|false)"
     )
     answers = re.findall(pattern, full_text)
-    # result = {key: value.lower() == "true" for key, value in answers}
     result = {key: 1 if value.lower() == "true" else 0 for key, value in answers}
     return result
 
@@ -110,9 +109,9 @@ def process_csv(input_csv, output_csv, prompt=None,typ="hf"):
     count = 1
     with open(output_csv, mode='w', encoding='utf-8', newline='') as csv_file:
         fieldnames = [
-            "ID", "Date", "Type", "Model_Type", "Infrastructural impact", 
+            "ID", "Date", "Time_Period", "Model_Type", "Infrastructural impact", 
             "Agricultural impact", "Ecological impact", "Financial impact", 
-            "Human health impact", "Political impact"
+            "Human Health impact", "Political impact"
         ]
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         writer.writeheader()
@@ -120,9 +119,9 @@ def process_csv(input_csv, output_csv, prompt=None,typ="hf"):
         with open(input_csv, mode='r', encoding='utf-8') as input_file:
             csv_reader = csv.DictReader(input_file)
             for row in csv_reader:
-                original_text = row.get("Text", "")
+                original_text = row.get("Article", "")
                 date = row.get("Date", "")
-                type_row = row.get("Type", "")
+                type_row = row.get("Time_Period", "")
                 id_row = row.get("ID", "")
 
                 original_response, extracted_response = inference(original_text,typ=typ)
@@ -130,7 +129,7 @@ def process_csv(input_csv, output_csv, prompt=None,typ="hf"):
                 result = {
                     "ID": id_row,
                     "Date": date,
-                    "Type": type_row,
+                    "Time_Period": type_row,
                     "Model_Type": model_name,
                     "Infrastructural impact": extracted_response.get("Infrastructural", ""),
                     "Agricultural impact": extracted_response.get("Agricultural", ""),

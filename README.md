@@ -4,7 +4,7 @@
 - [Data](#data)
 - [How to Use](#usage)
   - [Task1: Multi-Label Classification](#task_1)
-  - [Task2: Ranking-Based Question-Answering](#autatic_metrics)
+  - [Task2: Ranking-Based Question-Answering](#task_2)
 - [Citation](#citation)
 
 ## Data <a name="data"></a>
@@ -53,7 +53,7 @@ id,query,correct_passage_index,passage_1,passage_2, ...,passage_100
 ## How to use <a name="usage"></a>
 Our code repo provides two tasks to evaluate LLMs on disruptive weather impacts understanding.
 
-## Multi-Label Classification <a name="task 1"></a>
+## Multi-Label Classification <a name="task_1"></a>
 
 multi-label classification aims to test the ability of LLMs to distinguish the disruptive weather impact for each given article.
 
@@ -64,7 +64,7 @@ To run the task:
 4. change `your-input.csv` (options are LongCTX and MixedCTX, see [Data](#data)), and change `your-output.csv` to save the output.
 6. run `model_eval.py`
 
-## Question-Answering Ranking <a name="task 2"></a>
+## Question-Answering Ranking <a name="task_2"></a>
 
 
 

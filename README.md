@@ -42,13 +42,30 @@ Example of instances
 id,query,correct_passage_index,passage_1,passage_2, ...,passage_100
 0, What specific infrastructure and agricultural impact did the British steamer Canopus experience..., 12, p1, p2, ..., p100
 ```
+- "ID": Unique identifier for each entry.
+
+- "Query": Pseudo question generated for question answering
+
+- "Correct_passage_index": the index number of the ground-truth passage in the 100 passages candidate pool.
+
+- "Passage columns": Candidate pool [1 ground-truth + 99 noise columns] 
 
 ## How to use <a name="usage"></a>
+Our code repo provides two tasks to evaluate LLMs on disruptive weather impacts understanding.
 
-onstructed dataset and the code for the evalua-024
-tion framework are available in this anonymous025
-link to help society protect against vulnerabili-026
-ties from disasters
+## Multi-Label Classification <a name="task 1"></a>
+
+multi-label classification aims to test the ability of LLMs to distinguish the disruptive weather impact for each given article.
+
+To run the task:
+1. cd `./Multi-label_Task`
+2. run `pip install -r requirements.txt` to install the required packages.
+3. change `model_name` for your testing model.
+4. change `your-input.csv` (options are LongCTX and MixedCTX, see [Data](#data)), and change `your-output.csv` to save the output.
+6. run `model_eval.py`
+
+## Question-Answering Ranking <a name="task 2"></a>
+
 
 
 

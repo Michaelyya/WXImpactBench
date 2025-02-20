@@ -76,8 +76,3 @@ To run this task:
 5. for data evaluation, change `your-output.json` in `metrics.py` to the saved result from `model_eval.py`.
 6. run the metrics evaluation script `metrics.py`.
 
-## Citation <a name="citation"></a>
-Please cite:
-```python
-MICHAEL ANGELA ALLEN...
-```

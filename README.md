@@ -1,3 +1,5 @@
+This repository contains benchmark tasks for evaluating how well Large Language Models (LLMs) understand the societal impacts of disruptive weather events from historical sources.
+
 ## Table of Contents <a name="table_of_contents"></a>
 
 - [Table of Contents](#table_of_contents)
@@ -58,21 +60,30 @@ Our code repository provides two tasks to evaluate large language models (LLMs) 
 The multi-label classification task assesses an LLM’s ability to identify disruptive weather impacts in given articles.
 
 To run this task:
-1. navigate to the task directory `./Multi-label_Task`.
+1. navigate to the task directory `cd ./Multi-label_Task`.
 2. run `pip install -r requirements.txt` to install the required packages.
-3. set `model_name` to your desired model.
+3. configure model settings in `model_eval.py`.
+   - set `model_name` to your desired model.
 4. update `your-input.csv` (options are LongCTX and MixedCTX, see [Data](#data)), and specify  `your-output.csv` for saving results.
-6. run the evaluation script: `model_eval.py`.
+5. run the evaluation script: `python model_eval.py`.
+6. evaluate metrics using `python metrics.py`.
 
 ## Question-Answering Ranking <a name="task_2"></a> 🥇
 
 The question-answering ranking task evaluates an LLM’s ability to determine the likelihood that a given article contains the correct answer based on its parametric knowledge.
 
 To run this task:
-1. navigate to the task directory `./QA-ranking_Task`.
+1. navigate to the task directory `cd ./QA-ranking_Task`.
 2. run `pip install -r requirements.txt` to install the required packages.
-3. set `model_name` to your desired model.
-4. run `model_eval.py`.
+3. configure model settings in `model_eval.py`.
+   - set `model_name` to your desired model.
+4. run the evaluation `python model_eval.py`.
 5. for data evaluation, change `your-output.json` in `metrics.py` to the saved result from `model_eval.py`.
 6. run the metrics evaluation script `metrics.py`.
 
+
+F1 scores by impact category
+Row-wise accuracy
+Retrieval performance metrics (NDCG, MRR)
+
+For detailed performance analysis, please refer to our paper.

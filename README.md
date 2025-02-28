@@ -1,4 +1,9 @@
+# AnaloBench: Benchmarking the Identification of Abstract and Long-context Analogies
 This repository contains benchmark tasks for evaluating how well Large Language Models (LLMs) understand the societal impacts of disruptive weather events from historical sources.
+
+<div align="center">
+    <img src="./pics/benchmark framework.png" alt="Link to PDF" height="auto" style="width:80%;">
+</div>
 
 ## Table of Contents <a name="table_of_contents"></a>
 

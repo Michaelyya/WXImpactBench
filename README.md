@@ -1,4 +1,4 @@
-# AnaloBench: Benchmarking the Identification of Abstract and Long-context Analogies
+# WXImpactBench: A Disruptive Weather Impact Understanding Benchmark for Evaluating Large Language Models
 This repository contains benchmark tasks for evaluating how well Large Language Models (LLMs) understand the societal impacts of disruptive weather events from historical sources.
 
 <div align="center">

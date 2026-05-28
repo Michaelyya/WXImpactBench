@@ -1,0 +1,7 @@
+# Pyserini BM25 baseline for the QA-ranking task.
+# Requires a JDK (Java 21) on PATH in addition to these Python packages.
+# Officially supported on Linux/macOS; Windows support is unofficial.
+pyserini>=0.22.0
+pytrec_eval>=0.5
+pandas>=1.5
+tqdm>=4.60
